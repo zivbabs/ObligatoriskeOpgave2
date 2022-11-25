@@ -11,6 +11,7 @@ public class Formand extends Ansat{
 
     }
     public Formand(String medlemsskab, String fornavn, String efternavn, String pw){
+        super(medlemsskab, fornavn, efternavn, pw);
     }
 
     public void opretMedlem() throws FileNotFoundException {

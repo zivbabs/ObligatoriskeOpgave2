@@ -8,7 +8,5 @@ public class Main {
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListeRestance("Medlemmer.txt"));
 
-
-
     }
 }
