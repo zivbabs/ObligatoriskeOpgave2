@@ -25,7 +25,7 @@ public class Texthandler {
     }
 
     public void opretMedlemAlder(){
-        System.out.println("Indtast alder på medlem: ");
+        System.out.println("Indtast fødselsdato på medlem: ");
     }
 
     public void medlemFornavnPrint() {
@@ -38,5 +38,9 @@ public class Texthandler {
 
     public void forkertInputPrint() {
         System.out.println("Forkert input prøv igen.");
+    }
+
+    public void printRestance() {
+
     }
 }

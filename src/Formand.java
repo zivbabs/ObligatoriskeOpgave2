@@ -1,6 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.time.LocalDate;
 
 public class Formand extends Ansat{
 
@@ -29,15 +30,19 @@ public class Formand extends Ansat{
             int d = sc.inputInt();
 
             if (d == 1) {
-                out.println("Motionist, " + a + ", " + b + ", " + c + ", " + "I restance");
+                out.println("Motionist, " + a + ", " + b + ", " + c + ", " + "I restance" + ", " +localDate());
                 success = true;
             }
             if (d == 2) {
-                out.println("KonkurrenceSvømmer, " + a + ", " + b + ", " + c + ", " + "I restance, " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
+                out.println("KonkurrenceSvømmer, " + a + ", " + b + ", " + c + ", " + "I restance, " + localDate() + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
                 success = true;
-            } else {
+            }
+            if (d != 1 && d != 2){
                 th.forkertInputPrint();
             }
         }
+    }
+    public String localDate(){
+        return String.valueOf(LocalDate.now());
     }
 }
