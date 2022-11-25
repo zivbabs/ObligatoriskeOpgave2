@@ -3,7 +3,7 @@ public class Ansat {
     protected String fornavn;
     protected String efternavn;
     protected String pw;
-    protected String localDate;
+
 
     public Ansat(){
 

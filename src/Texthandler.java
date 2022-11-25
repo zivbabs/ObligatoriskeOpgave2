@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 public class Texthandler {
     public void forMangeCharPrint() {
     }
@@ -40,7 +43,18 @@ public class Texthandler {
         System.out.println("Forkert input prøv igen.");
     }
 
-    public void printRestance() {
+    public void printRestance() throws FileNotFoundException {
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.FilTilListeRestance("Medlemmer.txt"));
 
+        for(Medlem m : mdl){
+            if(m instanceof Motionist && m.restance.equals("I restance")){
+                System.out.println(m.medlemsskab + m.fornavn + m.restance);
+            }
+            if(m instanceof KonkurrenceSvømmer && m.restance.equals("I restance")){
+                System.out.println(m.medlemsskab + m.fornavn + m.restance);
+            }
+        }
     }
 }

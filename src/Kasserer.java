@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+
 public class Kasserer extends Ansat{
     Texthandler th = new Texthandler();
     public Kasserer(){
@@ -7,7 +9,7 @@ public class Kasserer extends Ansat{
         super(medlemsskab, fornavn, efternavn, pw);
     }
 
-    public void printMedlemmerRestance(){
+    public void printMedlemmerRestance() throws FileNotFoundException {
         th.printRestance();
     }
     public void betalKontigentMedlemmer(){
