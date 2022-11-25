@@ -19,18 +19,24 @@ public class Texthandler {
 
     public void vælgDiciplinPrint() {
     }
-
-    public void opretMedlemNavn()
-    {
-        System.out.println("Skriv navn på nyt medlem: ");
-    }
-
     public void opretMedlemMedlemskab(){
-        System.out.println("Passivt eller aktivt? (1,2)");
+        System.out.println("Motionist eller KonkurrenceSvømmer? (1,2)");
 
     }
 
     public void opretMedlemAlder(){
+        System.out.println("Indtast alder på medlem: ");
+    }
 
+    public void medlemFornavnPrint() {
+        System.out.println("Skriv fornavn på medlem: ");
+    }
+
+    public void medlemEfternavnPrint() {
+        System.out.println("Skriv efternavn på medlem: ");
+    }
+
+    public void forkertInputPrint() {
+        System.out.println("Forkert input prøv igen.");
     }
 }
