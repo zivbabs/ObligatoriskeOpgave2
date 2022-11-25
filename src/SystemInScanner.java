@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class SystemInScanner {
-    Texthandling th = new Texthandling();
+    Texthandler th = new Texthandler();
     public int inputInt() {
         boolean success = false;
         int output = 0;

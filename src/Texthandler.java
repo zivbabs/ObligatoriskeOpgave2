@@ -1,4 +1,4 @@
-public class Texthandling {
+public class Texthandler {
     public void forMangeCharPrint() {
     }
 
