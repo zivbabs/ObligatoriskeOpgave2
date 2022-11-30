@@ -16,7 +16,8 @@ public class Formand extends Ansat{
 
     public void opretMedlem() throws FileNotFoundException {
         boolean success = false;
-        PrintStream out = new PrintStream(new FileOutputStream("Medlemmer.txt", true));
+        PrintStream out1 = new PrintStream(new FileOutputStream("Medlemmer.txt", true));
+        PrintStream out2 = new PrintStream(new FileOutputStream("KonkurrenceSvømmere.txt", true));
 
         th.medlemFornavnPrint();
         String a = sc.inputString();
@@ -31,11 +32,12 @@ public class Formand extends Ansat{
             int d = sc.inputInt();
 
             if (d == 1) {
-                out.println("Motionist, " + a + ", " + b + ", " + c + ", " + "I restance" + ", " +localDate());
+                out1.println("Motionist, " + a + ", " + b + ", " + c + ", " + "I restance" + ", " +localDate());
                 success = true;
             }
             if (d == 2) {
-                out.println("KonkurrenceSvømmer, " + a + ", " + b + ", " + c + ", " + "I restance, " + localDate() + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
+                out1.println("KonkurrenceSvømmer, " + a + ", " + b + ", " + c + ", " + "I restance, " + localDate() + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
+                out2.println("KonkurrenceSvømmer, " + a + ", " + b + ", " + c + ", " + "I restance, " + localDate() + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
                 success = true;
             }
             if (d != 1 && d != 2){

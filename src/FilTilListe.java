@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class FilTilListe {
-    public ArrayList<Medlem> FilTilListeRestance(String file) throws FileNotFoundException {
+    public ArrayList<Medlem> FilTilListe(String file) throws FileNotFoundException {
         File filInput = new File(file);
         Scanner sc = new Scanner(filInput);
         ArrayList<Medlem> mdl = new ArrayList<>();

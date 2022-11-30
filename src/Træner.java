@@ -7,4 +7,6 @@ public class Træner extends Ansat{
         super(medlemsskab, fornavn, efternavn, pw);
         this.dicipliner = dicipliner;
     }
+
+
 }

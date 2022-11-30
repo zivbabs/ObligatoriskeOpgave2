@@ -31,4 +31,8 @@ public class Medlem {
         this.stævne = stævne;
         this.træner = træner;
     }
+
+    public void setRestance(String restance) {
+        this.restance = restance;
+    }
 }

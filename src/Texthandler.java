@@ -46,7 +46,7 @@ public class Texthandler {
     public void printRestance() throws FileNotFoundException {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListeRestance("Medlemmer.txt"));
+        mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
 
         for(Medlem m : mdl){
             if(m instanceof Motionist && m.restance.equals("I restance")){
@@ -56,5 +56,19 @@ public class Texthandler {
                 System.out.println(m.medlemsskab + m.fornavn + m.restance);
             }
         }
+    }
+
+    public void konkurrenceSvømmere() throws FileNotFoundException {
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
+
+        for(Medlem m : mdl){
+            System.out.println(m.medlemsskab);
+        }
+    }
+
+    public void redigerMedlemRestance() {
+        System.out.println("Vælg medlem som du vil ændre restance på med tal ID.");
     }
 }

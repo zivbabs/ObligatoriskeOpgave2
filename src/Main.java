@@ -1,7 +1,4 @@
-import org.w3c.dom.Text;
-
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class Main {
 
