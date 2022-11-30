@@ -7,6 +7,19 @@ public class Træner extends Ansat{
         super(medlemsskab, fornavn, efternavn, pw);
         this.dicipliner = dicipliner;
     }
+    public void tilFøjdisciplin(){
 
+    }
+    public void tilføjTræner(){
 
+    }
+    public void tilføjTræningsTid(){
+
+    }
+    public void tilføjStævneTid(){
+
+    }
+    public void printTop5(){
+
+    }
 }

@@ -24,7 +24,7 @@ public class Formand extends Ansat{
         th.medlemEfternavnPrint();
         String b = sc.inputString();
         th.opretMedlemAlder();
-        int c = sc.inputInt();
+        String c = sc.inputAlder();
 
         while(!success){
 

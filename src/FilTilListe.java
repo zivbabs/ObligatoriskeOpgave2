@@ -15,7 +15,7 @@ public class FilTilListe {
             String medlemsskab = i[0].trim();
             String fornavn = i[1].trim();
             String efternavn = i[2].trim();
-            int alder = Integer.parseInt(i[3].trim());
+            String alder = i[3].trim();
             String restance = i[4].trim();
             String oprettelsesDato = i[5].trim();
             if(medlemsskab.equals("Motionist")){

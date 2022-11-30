@@ -11,17 +11,6 @@ public class Texthandler {
     public void ingenBogstavPrint() {
     }
 
-    public void max15PWPrint() {
-    }
-
-    public void gentagPWPrint() {
-    }
-
-    public void PWIkkeEnsTooLongPrint() {
-    }
-
-    public void vælgDiciplinPrint() {
-    }
     public void opretMedlemMedlemskab(){
         System.out.println("Motionist eller KonkurrenceSvømmer? (1,2)");
 
@@ -70,5 +59,40 @@ public class Texthandler {
 
     public void redigerMedlemRestance() {
         System.out.println("Vælg medlem som du vil ændre restance på med tal ID.");
+    }
+
+    public void annuleretBetaling() {
+        System.out.println("Medlem har stadig ikke betalt.");
+    }
+
+    public void visKontingentBeløb(int alder, String medlemsskab) {
+        String beløb = "";
+
+        if(alder < 18 && medlemsskab.contains("KonkurrenceSvømmer")){
+            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1000 kr.";
+        }
+        else if(alder > 18 && medlemsskab.contains("KonkurrenceSvømmer")){
+            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1600 kr.";
+        }
+        else if(alder >= 60 && medlemsskab.contains("KonkurrenceSvømmer")){
+            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1200 kr.";
+        }
+        else{
+            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "500 kr.";
+        }
+        System.out.println(beløb);
+        System.out.println("Hvis restance skal betales tryk [1] ellers indtast vilkårligt tal.");
+    }
+
+    public void printIndtastÅrstal() {
+        System.out.println("Indtast årstal på medlem fødselsdato. Fx. 1987");
+    }
+
+    public void printIndtastMåned() {
+        System.out.println("Indtast måned på medlem fødselsdato. Fx. 11");
+    }
+
+    public void printIndtastDag() {
+        System.out.println("Indtast dag på medlem fødselsdato. Fx. 25");
     }
 }

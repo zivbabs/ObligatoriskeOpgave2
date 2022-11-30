@@ -11,4 +11,7 @@ public class ListeTilFil {
             out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", " + m.oprettelsesDato + ", " + m.dicipliner + ", " + m.bedsteTid + ", " + m.stævne + ", " + m.træner);
         }
     }
+    public void tilføjTræner(){
+
+    }
 }

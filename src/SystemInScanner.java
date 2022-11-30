@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class SystemInScanner {
@@ -12,7 +13,7 @@ public class SystemInScanner {
                 Scanner scn = new Scanner(System.in);
                 String input = scn.next();
 
-                if(input.length() < 4) {
+                if(input.length() <= 4) {
                     output = Integer.parseInt(input);
                     success = true;
                 }
@@ -55,38 +56,51 @@ public class SystemInScanner {
         }
         return output;
     }
-    public String inputPassword(){
+
+    public String inputAlder() {
+        String fDato = "";
         boolean success = false;
-        String output = "";
+        String årstal = "";
+        String måned = "";
+        String dag = "";
 
-        while(!success) {
+        while(!success){
+            try {
 
-            Scanner scn = new Scanner(System.in);
-            th.max15PWPrint();
-            String input1 = scn.next();
-            th.gentagPWPrint();
-            String input2 = scn.next();
+                th.printIndtastÅrstal();
+                String input1 = String.valueOf(inputInt());
+                if(input1.length() == 4 && Integer.parseInt(input1) < LocalDate.now().getYear()){
+                    årstal = input1;
+                }
 
-            if(input1.equals(input2) && !input2.contains(" ") && input2.length() < 15){
-                output = input2;
-                success = true;
-            }
-            else{
-                th.PWIkkeEnsTooLongPrint();
+                th.printIndtastMåned();
+                String input2 = String.valueOf(inputInt());
+                if(input2.length() <= 2 && Integer.parseInt(input2) <= 12){
+                    if(input2.length() == 1){
+                        måned = "0"+input2;
+                    }
+                    else {
+                        måned = input2;
+                    }
+                }
+
+                th.printIndtastDag();
+                String input3 = String.valueOf(inputInt());
+                if(input3.length() <= 2 && Integer.parseInt(input3) <= 31){
+                    if(input3.length() == 1){
+                        dag = "0"+input3;
+                    }
+                    else{
+                        dag = input3;
+                    }
+                    success = true;
+                }
+
+            }catch(Exception e){
+                th.forkertInputPrint();
             }
         }
-        return output;
-    }
-    public String inputDisciplin(){
-        th.vælgDiciplinPrint();
-        String diciplin = "";
-        switch(inputInt()){
-            case 1: diciplin = "Butterfly.txt"; break;
-            case 2: diciplin = "Crawl"; break;
-            case 3: diciplin = "Rygcrawl"; break;
-            case 4: diciplin = "Brystsvømning"; break;
-            case 5: diciplin = "Hundesvømning"; break;
-        }
-        return diciplin;
+        fDato = årstal + "-" + måned + "-" + dag;
+        return fDato;
     }
 }

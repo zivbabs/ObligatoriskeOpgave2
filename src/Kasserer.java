@@ -1,4 +1,6 @@
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 
 public class Kasserer extends Ansat{
@@ -24,11 +26,18 @@ public class Kasserer extends Ansat{
         th.redigerMedlemRestance();
 
         int i = sc.inputInt();
+        int alder = Period.between(LocalDate.parse(mdl.get(i).alder), LocalDate.now()).getYears();
 
-        mdl.get(i).setRestance("Betalt" + setDato());
+        th.visKontingentBeløb(alder, mdl.get(i).medlemsskab);
 
+        int j = sc.inputInt();
+        if(j == 1) {
+            mdl.get(i).setRestance("Betalt" + setDato());
+        }
+        else{
+            th.annuleretBetaling();
+        }
         ListeTilFil ltf = new ListeTilFil();
         ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
-
     }
 }
