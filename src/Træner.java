@@ -107,6 +107,11 @@ public class Træner extends Ansat{
 
         th.valgTræningsTid();
         String c = nyTid();
+
+        mdl.get(a).setTid(c);
+
+        ListeTilFil ltf = new ListeTilFil();
+        ltf.ListeTilKonkurrence("Træningstider.txt", mdl);
     }
 
     private String nyTid() {
