@@ -39,4 +39,8 @@ public class Medlem {
     public void setDisciplin(String discipliner) {
         this.discipliner = discipliner;
     }
+
+    public void setTræner(String træner) {
+        this.træner = træner;
+    }
 }

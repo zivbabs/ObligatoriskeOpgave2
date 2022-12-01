@@ -71,7 +71,23 @@ public class Træner extends Ansat{
         return disciplin;
     }
 
-    public void tilføjTræner(){
+    public void tilføjTræner() throws FileNotFoundException {
+        th.printKonkurrenceSvømmere();
+
+        FilTilListe ftl = new FilTilListe();
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+
+        th.redigerTrænerPrint();
+        int a = sc.inputInt();
+
+        th.indtastTræner();
+        String b = sc.inputString();
+
+        mdl.get(a).setTræner(b);
+
+        ListeTilFil ltf = new ListeTilFil();
+        ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
 
     }
     public void tilføjTræningsTid(){

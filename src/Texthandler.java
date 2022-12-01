@@ -118,4 +118,12 @@ public class Texthandler {
     public void flereDiscPrint() {
         System.out.println("Skal der tilføjes flere discipliner? Ja [1] ellers tryk vilkårligt tal");
     }
+
+    public void redigerTrænerPrint() {
+        System.out.println("Vælg medlem som du gerne vil tilføje træner til.");
+    }
+
+    public void indtastTræner() {
+        System.out.println("Indtast initialer på den træner du gerne vil tilføje. Fx. FK");
+    }
 }
