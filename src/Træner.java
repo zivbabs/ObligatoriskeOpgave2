@@ -122,7 +122,23 @@ public class Træner extends Ansat{
         return valgDisciplin(a);
     }
     //Redigering af træningstider ud fra de træningstider man kan se hos træningstider.txt
-    public void redigerTræningsTid(){
+    public void redigerTræningsTid() throws FileNotFoundException
+    {
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
+
+        th.printTræningsTider();
+        th.redigerTræningPrint();
+
+        int a = sc.inputInt();
+
+        th.valgTræningsTid();
+        String b = sc.inputTid();
+        mdl.get(a).setTid(b);
+
+        ListeTilFil ltf = new ListeTilFil();
+        ltf.ListeTilKonkurrence("Træningstider.txt",mdl);
 
     }
     public void tilføjStævneTid(){

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 //Det betyder der vil være en stor del af opgaven der er den korrekte formattering af udprintninger.
 //Flere metoder i udprintning skal også bruges flere gange og nogle formatteringer kan laves om til metoder for at undgå repetition.
 public class Texthandler {
+
     public void forMangeCharPrint() {
     }
 
@@ -151,5 +152,21 @@ public class Texthandler {
 
     public void print100dele() {
         System.out.println("Print de 2 hundrededele i tiden. Fx 00 eller 10");
+    }
+
+    public void printTræningsTider() throws FileNotFoundException
+    {
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
+        for (Medlem m : mdl) {
+            System.out.println("Navn: "+m.fornavn + m.efternavn + " Disciplin: " + m.discipliner + m.bedsteTid);
+        }
+    }
+
+
+    public void redigerTræningPrint()
+    {
+        System.out.println("Indtast index nummer på det medlem du gerne vil redigere træningstid på: ");
     }
 }
