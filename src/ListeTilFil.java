@@ -9,7 +9,7 @@ public class ListeTilFil {
         PrintStream out = new PrintStream(new FileOutputStream(file));
         //Kører et for each loop med typen "Medlem" som vi kalder "m" for hvert "list" der er.
         for(Medlem m : list){
-            out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", " + m.oprettelsesDato + ", " + m.discipliner + ", " + m.bedsteTid + ", " + m.stævne + ", " + m.træner);
+            out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", " + m.træningsDisc + ", " + m.discipliner + ", " + m.bedsteTid + ", " + m.stævne + ", " + m.træner);
         }
     }
 }

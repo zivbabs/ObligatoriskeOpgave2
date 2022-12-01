@@ -128,4 +128,28 @@ public class Texthandler {
     public void indtastTræner() {
         System.out.println("Indtast initialer på den træner du gerne vil tilføje. Fx. FK");
     }
+
+    public void vælgMedlemNyTid() {
+        System.out.println("Vælg medlem du gerne vil oprette ny træningstid på.");
+    }
+
+    public void printValgteDiscipliner(String dicipliner) {
+        System.out.println("Det valgte medlem har " + dicipliner);
+    }
+
+    public void valgTræningsTid() {
+        System.out.println("Indtast ny træningstid på medlem.");
+    }
+
+    public void printMinutter() {
+        System.out.println("Indtast antal minutter med 2 tal. Fx 00 eller 10");
+    }
+
+    public void printSekunder() {
+        System.out.println("Indtast antal sekunder med 2 tal. Fx 00 eller 10");
+    }
+
+    public void print100dele() {
+        System.out.println("Print de 2 hundrededele i tiden. Fx 00 eller 10");
+    }
 }

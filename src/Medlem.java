@@ -5,7 +5,7 @@ public class Medlem {
     protected String efternavn;
     protected String alder;
     protected String restance;
-    protected String oprettelsesDato;
+    protected String træningsDisc;
     protected String discipliner;
     protected String bedsteTid;
     protected String stævne;
@@ -14,22 +14,22 @@ public class Medlem {
     public Medlem(){
     }
     //Constructor med parametre til motionister bruger this for at undgå sættere i subclasses.
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String oprettelsesDato){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String træningsDisc){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.alder = alder;
         this.restance = restance;
-        this.oprettelsesDato = oprettelsesDato;
+        this.træningsDisc = træningsDisc;
     }
     //Constructor med parametre til konkurrencesvømmere bruger this for at undgå settere i subclasses.
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String oprettelsesDato, String discipliner, String bedsteTid, String stævne, String træner){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String træningsDisc, String discipliner, String bedsteTid, String stævne, String træner){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.alder = alder;
         this.restance = restance;
-        this.oprettelsesDato = oprettelsesDato;
+        this.træningsDisc = træningsDisc;
         this.discipliner = discipliner;
         this.bedsteTid = bedsteTid;
         this.stævne = stævne;
@@ -46,5 +46,9 @@ public class Medlem {
     //Setter til træner for at kunne redigere den.
     public void setTræner(String træner) {
         this.træner = træner;
+    }
+
+    public void setTræningsDisc(String træningsDisc) {
+        this.træningsDisc = træningsDisc;
     }
 }

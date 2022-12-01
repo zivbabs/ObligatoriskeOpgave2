@@ -108,4 +108,55 @@ public class SystemInScanner {
         fDato = årstal + "-" + måned + "-" + dag;
         return fDato;
     }
+
+    public String inputTid() {
+        String tid = "";
+        String min = "";
+        String sek = "";
+        String mili = "";
+        boolean success = false;
+
+        while(!success){
+            try{
+                th.printMinutter();
+                String input1 = String.valueOf(inputInt());
+                if(input1.length() <= 2 && Integer.parseInt(input1) < 59){
+                    if(input1.length() == 2) {
+                        min = input1;
+                    }
+                    else{
+                        min = "0"+input1;
+                    }
+                }
+                //andet input der checker at den er mindre end 2 lang og mindre end tallet 59 da det er sekunder
+                th.printSekunder();
+                String input2 = String.valueOf(inputInt());
+                if(input2.length() <= 2 && Integer.parseInt(input2) <= 59){
+                    //checker her om den er længden kun er 1 hvis den er skal der tilføjes et 0
+                    if(input2.length() == 2){
+                        sek = input2;
+                    }
+                    else {
+                        sek = "0"+input2;
+                    }
+                }
+                //Tredje input der checker at den er mindre end 2 lang og mindre end tallet 59 da det er 100 dele kun 2 decimaler
+                th.print100dele();
+                String input3 = String.valueOf(inputInt());
+                if(input3.length() <= 2 && Integer.parseInt(input3) <= 59) {
+                    if (input3.length() == 2) {
+                        mili = input3;
+                    } else {
+                        mili = "0"+input3;
+                    }
+                    success = true;
+                }
+
+            }catch(Exception e){
+                th.forkertInputPrint();
+            }
+        }
+        tid = min+"."+sek+"."+mili;
+        return tid;
+    }
 }

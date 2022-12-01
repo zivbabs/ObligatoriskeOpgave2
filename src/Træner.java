@@ -92,13 +92,40 @@ public class Træner extends Ansat{
         ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
 
     }
-    public void tilføjStævneTid(){
+    public void tilføjTræningsTid() throws FileNotFoundException {
+        th.printKonkurrenceSvømmere();
 
+        FilTilListe ftl = new FilTilListe();
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+
+        th.vælgMedlemNyTid();
+        int a = sc.inputInt();
+
+        String b = træningsDiscValg(mdl.get(a).discipliner, mdl.get(a).fornavn);
+        mdl.get(a).setTræningsDisc(b);
+
+        th.valgTræningsTid();
+        String c = nyTid();
+    }
+
+    private String nyTid() {
+        return sc.inputTid();
+    }
+
+    private String træningsDiscValg(String discipliner, String fornavn) {
+        th.printValgteDiscipliner(discipliner);
+        th.printDisciplin(fornavn);
+        int a = sc.inputInt();
+        return valgDisciplin(a);
+    }
+
+    public void redigerTræningsTid(){
+
+    }
+    public void tilføjStævneTid(){
     }
     public void printTop5(){
-
-    }
-    public void tilføjTræningsTid(){
 
     }
 }

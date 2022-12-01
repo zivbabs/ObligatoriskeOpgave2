@@ -18,10 +18,10 @@ public class FilTilListe {
             String efternavn = i[2].trim();
             String alder = i[3].trim();
             String restance = i[4].trim();
-            String oprettelsesDato = i[5].trim();
+            String træningsDisc = i[5].trim();
             //Deler medlemmer op hvis de indeholder motionist eller konkurrencesvømmer i medlemsskab.
             if(medlemsskab.equals("Motionist")){
-                Medlem m = new Motionist(medlemsskab, fornavn, efternavn, alder, restance, oprettelsesDato);
+                Medlem m = new Motionist(medlemsskab, fornavn, efternavn, alder, restance, træningsDisc);
                 mdl.add(m);
             }
             if(medlemsskab.equals("KonkurrenceSvømmer")){
@@ -30,7 +30,7 @@ public class FilTilListe {
                 String stævne = i[8].trim();
                 String træner = i[9].trim();
 
-                Medlem m = new KonkurrenceSvømmer(medlemsskab, fornavn, efternavn, alder, restance, oprettelsesDato, discipliner, bedsteTid, stævne, træner);
+                Medlem m = new KonkurrenceSvømmer(medlemsskab, fornavn, efternavn, alder, restance, træningsDisc, discipliner, bedsteTid, stævne, træner);
                 mdl.add(m);
             }
          }
