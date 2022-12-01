@@ -92,13 +92,13 @@ public class Træner extends Ansat{
         ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
 
     }
-    public void tilføjTræningsTid(){
-
-    }
     public void tilføjStævneTid(){
 
     }
     public void printTop5(){
+
+    }
+    public void tilføjTræningsTid(){
 
     }
 }
