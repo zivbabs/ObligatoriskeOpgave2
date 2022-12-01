@@ -92,6 +92,7 @@ public class Træner extends Ansat{
         ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
 
     }
+    //Metode til at tilføje træningstid til medlemmer hvis de ikke har en træningstid endnu.
     public void tilføjTræningsTid() throws FileNotFoundException {
         th.printKonkurrenceSvømmere();
 
@@ -106,18 +107,14 @@ public class Træner extends Ansat{
         mdl.get(a).setTræningsDisc(b);
 
         th.valgTræningsTid();
-        String c = nyTid();
+        String c = sc.inputTid();
 
         mdl.get(a).setTid(c);
 
         ListeTilFil ltf = new ListeTilFil();
         ltf.ListeTilKonkurrence("Træningstider.txt", mdl);
     }
-
-    private String nyTid() {
-        return sc.inputTid();
-    }
-
+    //Vælg af træningsdiscipliner ud fra de discipliner medlemmet er tildelt
     private String træningsDiscValg(String discipliner, String fornavn) {
         th.printValgteDiscipliner(discipliner);
         th.printDisciplin(fornavn);
