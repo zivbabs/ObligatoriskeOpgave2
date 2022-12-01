@@ -141,7 +141,21 @@ public class Træner extends Ansat{
         ltf.ListeTilKonkurrence("Træningstider.txt",mdl);
 
     }
-    public void tilføjStævneTid(){
+    // Vælge medlem, indtaste stævne + dato, indtast placering, indtast disciplin
+    public void tilføjStævneTid() throws FileNotFoundException
+    {
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+
+        th.printKonkurrenceSvømmere();
+        th.vælgMedlemStævnePrint();
+
+        int a = sc.inputInt();
+        th.indtastStævne();
+
+        th.indtastPlacering();
+
     }
     public void printTop5(){
 

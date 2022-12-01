@@ -169,4 +169,19 @@ public class Texthandler {
     {
         System.out.println("Indtast index nummer på det medlem du gerne vil redigere træningstid på: ");
     }
+
+    public void vælgMedlemStævnePrint()
+    {
+        System.out.println("Vælg hvilket medlem du vil indtaste stævne: ");
+    }
+
+    public void indtastStævne()
+    {
+        System.out.println("Indtast navn på stævne: ");
+    }
+
+    public void indtastPlacering()
+    {
+        System.out.println("Indtast placering i stævnet: ");
+    }
 }
