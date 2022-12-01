@@ -1,4 +1,4 @@
 Formand, Freddy, Krueger, password123
 Kasserer, Jason, Vorhees, password456
-Træner, Michael, Meyers, PaSsWoRd789
-Træner, Jack, Torrance, PasSwoRd123
+Træner, Michael, Meyers, PaSsWoRd789, Crawl
+Træner, Jack, Torrance, PasSwoRd123, Rygcrawl

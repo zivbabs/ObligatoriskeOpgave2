@@ -1,17 +1,18 @@
-import java.io.FileNotFoundException;
+import java.io.FileNotFoundException; //Import af exception og arraylist
 import java.util.ArrayList;
 
 public class Træner extends Ansat{
+    //Import af de scanner til inputs og texthandler til konsol udprintninger.
     Texthandler th = new Texthandler();
     SystemInScanner sc = new SystemInScanner();
-    protected String dicipliner;
+    //Constructor uden parametre
     public Træner(){
-
     }
-    public Træner(String medlemsskab, String fornavn, String efternavn, String pw, String dicipliner){
+    //Constructor med parametre, bruger super for at undgå settere.
+    public Træner(String medlemsskab, String fornavn, String efternavn, String pw){
         super(medlemsskab, fornavn, efternavn, pw);
-        this.dicipliner = dicipliner;
     }
+    //Metode for at tilføje discipliner til medlemmer op til alle 5 man kan have med en concat string build
     public void tilFøjdisciplin() throws FileNotFoundException {
         boolean success = false;
 
@@ -33,13 +34,13 @@ public class Træner extends Ansat{
         while(!success) {
             th.flereDiscPrint();
             int d = sc.inputInt();
-
+            //Checker om der skal vælges ekstra discipliner
             if (d == 1) {
 
                 th.printDisciplin(mdl.get(a).fornavn);
                 int e = sc.inputInt();
                 String f = valgDisciplin(e);
-
+                //Checker om den allerede indeholder den disciplin der blev valgt
                 if(!mdl.get(a).discipliner.contains(f))
                     mdl.get(a).setDisciplin(mdl.get(a).discipliner.concat("-").concat(f));
             }
@@ -47,10 +48,11 @@ public class Træner extends Ansat{
                 success = true;
             }
         }
+        //Kører arrayliste med ændringer tilbage til fil
         ListeTilFil ltf = new ListeTilFil();
         ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
     }
-
+    //Metode med input for valg af disciplienr som vælger den disciplin der skal bruges.
     private String valgDisciplin(int input) {
         String disciplin = "";
         if(input == 1){
@@ -70,7 +72,7 @@ public class Træner extends Ansat{
         }
         return disciplin;
     }
-
+    //Metode for at tilføje træner da der kun kan være 1 træner til hver medlem selvom de kan have flere discipliner
     public void tilføjTræner() throws FileNotFoundException {
         th.printKonkurrenceSvømmere();
 

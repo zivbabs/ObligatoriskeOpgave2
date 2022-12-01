@@ -1,6 +1,8 @@
-import java.io.FileNotFoundException;
+import java.io.FileNotFoundException; //Import af exception og arraylist til metoder
 import java.util.ArrayList;
-
+//Klasse der indeholder alle udprintninger til konsol da en del af krav er at det skal være overskueligt at læse i konsol.
+//Det betyder der vil være en stor del af opgaven der er den korrekte formattering af udprintninger.
+//Flere metoder i udprintning skal også bruges flere gange og nogle formatteringer kan laves om til metoder for at undgå repetition.
 public class Texthandler {
     public void forMangeCharPrint() {
     }
@@ -31,7 +33,7 @@ public class Texthandler {
     public void forkertInputPrint() {
         System.out.println("Forkert input prøv igen.");
     }
-
+    //printRestance of flere andre udprintninger bruger filtiliste til at læse data in derefter fordele den med for each loop.
     public void printRestance() throws FileNotFoundException {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
@@ -64,7 +66,7 @@ public class Texthandler {
     public void annuleretBetaling() {
         System.out.println("Medlem har stadig ikke betalt.");
     }
-
+    //visKontingentBeløb har paramtre alder og medlemsskab ind for at checke medlemsinfo så den kan vise korrekte beløb.
     public void visKontingentBeløb(int alder, String medlemsskab) {
         String beløb = "";
 
