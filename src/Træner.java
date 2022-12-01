@@ -121,7 +121,7 @@ public class Træner extends Ansat{
         int a = sc.inputInt();
         return valgDisciplin(a);
     }
-
+    //Redigering af træningstider ud fra de træningstider man kan se hos træningstider.txt
     public void redigerTræningsTid(){
 
     }
