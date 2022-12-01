@@ -8,7 +8,7 @@ public class ListeTilFil {
         PrintStream out = new PrintStream(new FileOutputStream(file));
 
         for(Medlem m : list){
-            out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", " + m.oprettelsesDato + ", " + m.dicipliner + ", " + m.bedsteTid + ", " + m.stævne + ", " + m.træner);
+            out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", " + m.oprettelsesDato + ", " + m.discipliner + ", " + m.bedsteTid + ", " + m.stævne + ", " + m.træner);
         }
     }
     public void tilføjTræner(){

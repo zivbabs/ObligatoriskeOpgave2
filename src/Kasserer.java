@@ -17,7 +17,7 @@ public class Kasserer extends Ansat{
         th.printRestance();
     }
     public void betalKontigentMedlemmer() throws FileNotFoundException {
-        th.konkurrenceSvømmere();
+        th.printMedlemmer();
 
         FilTilListe ftl = new FilTilListe();
         ArrayList<Medlem> mdl = new ArrayList<>();

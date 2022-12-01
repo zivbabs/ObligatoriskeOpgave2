@@ -47,7 +47,7 @@ public class Texthandler {
         }
     }
 
-    public void konkurrenceSvømmere() throws FileNotFoundException {
+    public void printMedlemmer() throws FileNotFoundException {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
@@ -58,7 +58,7 @@ public class Texthandler {
     }
 
     public void redigerMedlemRestance() {
-        System.out.println("Vælg medlem som du vil ændre restance på med tal ID.");
+        System.out.println("Vælg medlem som du vil ændre restance på.");
     }
 
     public void annuleretBetaling() {
@@ -94,5 +94,28 @@ public class Texthandler {
 
     public void printIndtastDag() {
         System.out.println("Indtast dag på medlem fødselsdato. Fx. 25");
+    }
+
+    public void printKonkurrenceSvømmere() throws FileNotFoundException {
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+
+        for(Medlem m : mdl){
+            System.out.println(m.medlemsskab);
+        }
+    }
+
+    public void redigerDisciplin() {
+        System.out.println("Vælg medlem du gerne vil ændre disciplin på.");
+    }
+
+    public void printDisciplin(String fornavn) {
+        System.out.println("Hvilken disciplin vil du gerne tilføje til " + fornavn + ".");
+        System.out.println("Crawl [1], Brystsvømning [2], Butterfly[3], Rygcrawl [4], Medley [5]");
+    }
+
+    public void flereDiscPrint() {
+        System.out.println("Skal der tilføjes flere discipliner? Ja [1] ellers tryk vilkårligt tal");
     }
 }

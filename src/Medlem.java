@@ -5,7 +5,7 @@ public class Medlem {
     protected String alder;
     protected String restance;
     protected String oprettelsesDato;
-    protected String dicipliner;
+    protected String discipliner;
     protected String bedsteTid;
     protected String stævne;
     protected String træner;
@@ -19,14 +19,14 @@ public class Medlem {
         this.restance = restance;
         this.oprettelsesDato = oprettelsesDato;
     }
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String oprettelsesDato, String dicipliner, String bedsteTid, String stævne, String træner){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String oprettelsesDato, String discipliner, String bedsteTid, String stævne, String træner){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.alder = alder;
         this.restance = restance;
         this.oprettelsesDato = oprettelsesDato;
-        this.dicipliner = dicipliner;
+        this.discipliner = discipliner;
         this.bedsteTid = bedsteTid;
         this.stævne = stævne;
         this.træner = træner;
@@ -34,5 +34,9 @@ public class Medlem {
 
     public void setRestance(String restance) {
         this.restance = restance;
+    }
+
+    public void setDisciplin(String discipliner) {
+        this.discipliner = discipliner;
     }
 }

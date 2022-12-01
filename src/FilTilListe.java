@@ -23,12 +23,12 @@ public class FilTilListe {
                 mdl.add(m);
             }
             if(medlemsskab.equals("KonkurrenceSvømmer")){
-                String dicipliner = i[6].trim();
+                String discipliner = i[6].trim();
                 String bedsteTid = i[7].trim();
                 String stævne = i[8].trim();
                 String træner = i[9].trim();
 
-                Medlem m = new KonkurrenceSvømmer(medlemsskab, fornavn, efternavn, alder, restance, oprettelsesDato, dicipliner, bedsteTid, stævne, træner);
+                Medlem m = new KonkurrenceSvømmer(medlemsskab, fornavn, efternavn, alder, restance, oprettelsesDato, discipliner, bedsteTid, stævne, træner);
                 mdl.add(m);
             }
          }
