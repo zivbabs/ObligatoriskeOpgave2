@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException; //Import af exception og arraylist
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Træner extends Ansat{
@@ -111,8 +112,11 @@ public class Træner extends Ansat{
 
         mdl.get(a).setTid(c);
 
+        ArrayList<Medlem> tempmdl = new ArrayList<>();
+        tempmdl.add(mdl.get(a));
+
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilKonkurrence("Træningstider.txt", mdl);
+        ltf.ListeTilKonkurrence("Træningstider.txt", tempmdl);
     }
     //Vælg af træningsdiscipliner ud fra de discipliner medlemmet er tildelt
     private String træningsDiscValg(String discipliner, String fornavn) {
@@ -146,15 +150,30 @@ public class Træner extends Ansat{
     {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
+        ListeTilFil ltf = new ListeTilFil();
         mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
-
         th.printKonkurrenceSvømmere();
-        th.vælgMedlemStævnePrint();
 
+        th.vælgMedlemStævnePrint();
         int a = sc.inputInt();
+
         th.indtastStævne();
+        String b = sc.inputString();
 
         th.indtastPlacering();
+        int c = sc.inputInt();
+
+        th.indtastStævneDisciplin();
+        int d = sc.inputInt();
+        String e = valgDisciplin(d);
+
+        mdl.get(a).setStævne(b+" "+setDato());
+        mdl.get(a).setPlacering(c);
+        mdl.get(a).setDisciplin(e);
+
+        ArrayList<Medlem> tempmdl = new ArrayList<>();
+        tempmdl.add(mdl.get(a));
+        ltf.ListeTilKonkurrence("Stævner.txt", tempmdl);
 
     }
     public void printTop5(){

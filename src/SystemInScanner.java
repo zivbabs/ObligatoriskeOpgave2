@@ -45,7 +45,8 @@ public class SystemInScanner {
                         //Checker længden er den samme efter vi har checket for chars og bygget string igen
                         if(output.length() == input.length() && output.lastIndexOf(output) == input.lastIndexOf(input)){
                             success = true;
-                        }                    }
+                        }
+                    }
                     else{ //Hvis den indeholder ting der ikke er bogstaver eller specificerede chars
                         th.ingenBogstavPrint();
                         output = "";
@@ -78,7 +79,7 @@ public class SystemInScanner {
                 //andet input der checker at den er mindre end 2 lang og mindre end tallet 12 da det er måneder
                 th.printIndtastMåned();
                 String input2 = String.valueOf(inputInt());
-                if(input2.length() <= 2 && Integer.parseInt(input2) <= 12){
+                if(input2.length() <= 2 && Integer.parseInt(input2) <= 12 && Integer.parseInt(input2)>0){
                     //checker her om den er længden kun er 1 hvis den er skal der tilføjes et 0 fx. januer = 1.
                     if(input2.length() == 1){
                         måned = "0"+input2;
@@ -90,16 +91,23 @@ public class SystemInScanner {
                 //Tredje input til dage checker om på samme måde som måned checker, bortset fra tallet kan være op til 31.
                 th.printIndtastDag();
                 String input3 = String.valueOf(inputInt());
-                if(input3.length() <= 2 && Integer.parseInt(input3) <= 31){
+                if(input3.length() <= 2 && Integer.parseInt(input3) <= 31 && Integer.parseInt(input3)>0){
                     if(input3.length() == 1){
                         dag = "0"+input3;
                     }
                     else{
                         dag = input3;
                     }
+                }
+                if (!årstal.isEmpty() && !måned.isEmpty() && !dag.isEmpty()) {
                     success = true;
                 }
-
+                else {
+                    System.out.println("Dum dum");
+                    årstal = "";
+                    måned = "";
+                    dag = "";
+                }
             }catch(Exception e){ //Catch hvis inputs ikke stemmer overens med det der skal bruges
                 th.forkertInputPrint();
             }

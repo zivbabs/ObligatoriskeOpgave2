@@ -55,4 +55,14 @@ public class Medlem {
     public void setTid(String tid) {
         this.bedsteTid = bedsteTid;
     }
+
+    public void setStævne(String stævne)
+    {
+        this.stævne = stævne;
+    }
+
+    public void setPlacering(int placering)
+    {
+        bedsteTid = String.valueOf(placering);
+    }
 }

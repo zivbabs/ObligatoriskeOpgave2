@@ -6,16 +6,19 @@ import java.util.ArrayList;
 public class Texthandler {
 
     public void forMangeCharPrint() {
+        System.out.println("Du har indtastet for mange karakterer. Prøv igen.");
     }
 
     public void kunTalPrint() {
+        System.out.println("Du har indtastet andet end et tal. Prøv igen.");
     }
 
     public void ingenBogstavPrint() {
+        System.out.println("Du har indtastet en karakter som ikke er godkendt. Prøv igen.");
     }
 
     public void opretMedlemMedlemskab(){
-        System.out.println("Motionist eller KonkurrenceSvømmer? (1,2)");
+        System.out.println("Skal det være: \nMotionist [1] \nKonkurrenceSvømmer [2]");
 
     }
 
@@ -183,5 +186,9 @@ public class Texthandler {
     public void indtastPlacering()
     {
         System.out.println("Indtast placering i stævnet: ");
+    }
+
+    public void indtastStævneDisciplin()
+    {
     }
 }
