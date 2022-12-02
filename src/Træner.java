@@ -1,5 +1,4 @@
 import java.io.FileNotFoundException; //Import af exception og arraylist
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Træner extends Ansat{
@@ -68,9 +67,10 @@ public class Træner extends Ansat{
         else if(input == 4){
             disciplin = "Rygcrawl";
         }
-        else{
+        else {
             disciplin = "Medley";
         }
+
         return disciplin;
     }
     //Metode for at tilføje træner da der kun kan være 1 træner til hver medlem selvom de kan have flere discipliner
@@ -104,7 +104,9 @@ public class Træner extends Ansat{
         th.vælgMedlemNyTid();
         int a = sc.inputInt();
 
-        String b = træningsDiscValg(mdl.get(a).discipliner, mdl.get(a).fornavn);
+        th.printValgteDiscipliner(mdl.get(a).discipliner);
+        th.printDisciplinTid();
+        String b = discValg();
         mdl.get(a).setTræningsDisc(b);
 
         th.valgTræningsTid();
@@ -116,13 +118,22 @@ public class Træner extends Ansat{
         tempmdl.add(mdl.get(a));
 
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilKonkurrence("Træningstider.txt", tempmdl);
+        ltf.ListeTilFilAppend("Træningstider.txt", tempmdl);
     }
     //Vælg af træningsdiscipliner ud fra de discipliner medlemmet er tildelt
-    private String træningsDiscValg(String discipliner, String fornavn) {
-        th.printValgteDiscipliner(discipliner);
-        th.printDisciplin(fornavn);
-        int a = sc.inputInt();
+    private String discValg() {
+
+        boolean success = false;
+        int a = 0;
+        while (!success) {
+            a=sc.inputInt();
+            if (a < 6 && a > 0) {
+                success = true;
+            }
+            else {
+                th.forkertInputPrint();
+            }
+        }
         return valgDisciplin(a);
     }
     //Redigering af træningstider ud fra de træningstider man kan se hos træningstider.txt
@@ -131,6 +142,7 @@ public class Træner extends Ansat{
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
+
 
         th.printTræningsTider();
         th.redigerTræningPrint();
@@ -163,9 +175,8 @@ public class Træner extends Ansat{
         th.indtastPlacering();
         int c = sc.inputInt();
 
-        th.indtastStævneDisciplin();
-        int d = sc.inputInt();
-        String e = valgDisciplin(d);
+        th.discValgStævne();
+        String e = discValg();
 
         mdl.get(a).setStævne(b+" "+setDato());
         mdl.get(a).setPlacering(c);
@@ -173,7 +184,7 @@ public class Træner extends Ansat{
 
         ArrayList<Medlem> tempmdl = new ArrayList<>();
         tempmdl.add(mdl.get(a));
-        ltf.ListeTilKonkurrence("Stævner.txt", tempmdl);
+        ltf.ListeTilFilAppend("Stævner.txt", tempmdl);
 
     }
     public void printTop5(){

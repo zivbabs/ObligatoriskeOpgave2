@@ -12,4 +12,11 @@ public class ListeTilFil {
             out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", " + m.træningsDisc + ", " + m.discipliner + ", " + m.bedsteTid + ", " + m.stævne + ", " + m.træner);
         }
     }
+    public void ListeTilFilAppend(String file, ArrayList<Medlem> list) throws FileNotFoundException
+    {
+        PrintStream out = new PrintStream(new FileOutputStream(file,true));
+        for(Medlem m : list) {
+            out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", " + m.træningsDisc + ", " + m.discipliner + ", " + m.bedsteTid + ", " + m.stævne + ", " + m.træner);
+        }
+    }
 }

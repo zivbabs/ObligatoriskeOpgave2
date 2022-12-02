@@ -3,7 +3,11 @@ import java.io.FileNotFoundException;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Formand f = new Formand();
-        f.opretMedlem();
+       /* Kasserer k = new Kasserer();
+        k.betalKontigentMedlemmer();
+        k.printMedlemmerRestance();
+        */
+        Træner t = new Træner();
+        t.tilføjStævneTid();
     }
 }

@@ -25,7 +25,7 @@ public class Kasserer extends Ansat{
 
         FilTilListe ftl = new FilTilListe();
         ArrayList<Medlem> mdl = new ArrayList<>();
-        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+        mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
 
         th.redigerMedlemRestance();
         //Bruger period between years til at se hvad forskellen er mellem fødselsalder og datoen i dag.
@@ -36,12 +36,12 @@ public class Kasserer extends Ansat{
         //Extra check om du medlemmet har betalt eller ej, da det foregår eksternt.
         int j = sc.inputInt();
         if(j == 1) {
-            mdl.get(i).setRestance("Betalt" + setDato());
+            mdl.get(i).setRestance("Betalt " + setDato());
         }
         else{
             th.annuleretBetaling();
         }
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
+        ltf.ListeTilKonkurrence("Medlemmer.txt", mdl);
     }
 }

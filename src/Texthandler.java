@@ -39,32 +39,63 @@ public class Texthandler {
     }
     //printRestance of flere andre udprintninger bruger filtiliste til at læse data in derefter fordele den med for each loop.
     public void printRestance() throws FileNotFoundException {
+        int counter1 = 0;
+        int counter2 = 0;
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
 
         for(Medlem m : mdl){
             if(m instanceof Motionist && m.restance.equals("I restance")){
-                System.out.println(m.medlemsskab + m.fornavn + m.restance);
+                if (counter1==0) {
+                    System.out.printf("\nMOTIONIST DATA%n");
+                    System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
+                    System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n", "Medlemskab", "Fornavn", "Efternavn", "Fødselsdato", "Restance");
+                    System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
+                    counter1++;
+                }
+                System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n",m.medlemsskab, m.fornavn, m.efternavn, m.alder, m.restance);
+                System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
             }
+
             if(m instanceof KonkurrenceSvømmer && m.restance.equals("I restance")){
-                System.out.println(m.medlemsskab + m.fornavn + m.restance);
+                if (counter2==0) {
+                    System.out.printf("\nKONKURRENCESVØMMER DATA%n");
+                    System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
+                    System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n", "Medlemskab", "Fornavn", "Efternavn", "Fødselsdato", "Restance");
+                    System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
+                    counter2++;
+                }
+                System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n",m.medlemsskab, m.fornavn, m.efternavn, m.alder, m.restance);
+                System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
             }
         }
     }
 
     public void printMedlemmer() throws FileNotFoundException {
+        int idcounter = 0;
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
 
-        for(Medlem m : mdl){
-            System.out.println(m.medlemsskab);
+        System.out.printf("MEDLEMMER DATA%n");
+        System.out.printf("-----------------------------------------------------------------------------------------------------------------------------%n");
+        System.out.printf("|%-5s | %-20s | %-25s | %-25s | %-12s | %-20s |%n", "ID", "Medlemskab", "Fornavn", "Efternavn", "Fødselsdato", "Restance");
+        System.out.printf("-----------------------------------------------------------------------------------------------------------------------------%n");
+
+
+        for(Medlem m : mdl) {
+
+            System.out.printf("|%-5s | %-20s | %-25s | %-25s | %-12s | %-20s |%n", idcounter, m.medlemsskab, m.fornavn, m.efternavn, m.alder, m.restance);
+            System.out.printf("-----------------------------------------------------------------------------------------------------------------------------%n");
+
+            idcounter++;
+
         }
     }
 
     public void redigerMedlemRestance() {
-        System.out.println("Vælg medlem som du vil ændre restance på.");
+        System.out.println("Vælg ID ud fra det medlem, som du vil ændre restance på.");
     }
 
     public void annuleretBetaling() {
@@ -106,14 +137,22 @@ public class Texthandler {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+        int idcounter = 0;
+
+        System.out.printf("KONKURRENCESVØMMER DATA%n");
+        System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
+        System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-41s | %-7s |%n", "ID", "Fornavn", "Efternavn", "Fødselsdato", "Discipliner", "Træner");
+        System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
 
         for(Medlem m : mdl){
-            System.out.println(m.medlemsskab);
+            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-41s | %-7s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.discipliner, m.træner);
+            System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
+            idcounter++;
         }
     }
 
     public void redigerDisciplin() {
-        System.out.println("Vælg medlem du gerne vil ændre disciplin på.");
+        System.out.println("Vælg ID ud fra det medlem du gerne vil ændre disciplin på.");
     }
 
     public void printDisciplin(String fornavn) {
@@ -126,19 +165,19 @@ public class Texthandler {
     }
 
     public void redigerTrænerPrint() {
-        System.out.println("Vælg medlem som du gerne vil tilføje træner til.");
+        System.out.println("Vælg ID ud fra medlem som du gerne vil tilføje træner til.");
     }
 
     public void indtastTræner() {
-        System.out.println("Indtast initialer på den træner du gerne vil tilføje. Fx. FK");
+        System.out.println("Indtast initialer på den træner du gerne vil tilføje (Maks 3 bogstaver). Fx. FOK");
     }
 
     public void vælgMedlemNyTid() {
-        System.out.println("Vælg medlem du gerne vil oprette ny træningstid på.");
+        System.out.println("Vælg ID ud fra medlem du gerne vil oprette ny træningstid på.");
     }
 
     public void printValgteDiscipliner(String dicipliner) {
-        System.out.println("Det valgte medlem har " + dicipliner);
+        System.out.println("Det valgte medlem har " + dicipliner + ".");
     }
 
     public void valgTræningsTid() {
@@ -162,20 +201,29 @@ public class Texthandler {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
-        for (Medlem m : mdl) {
-            System.out.println("Navn: "+m.fornavn + m.efternavn + " Disciplin: " + m.discipliner + m.bedsteTid);
+        int idcounter = 0;
+
+        System.out.printf("TRÆNINGSTIDER DATA%n");
+        System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
+        System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", "ID", "Fornavn", "Efternavn", "Fødselsdato", "Disciplin", "Træningstid");
+        System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
+
+        for(Medlem m : mdl){
+            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.træningsDisc, m.bedsteTid);
+            System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
+            idcounter++;
         }
     }
 
 
     public void redigerTræningPrint()
     {
-        System.out.println("Indtast index nummer på det medlem du gerne vil redigere træningstid på: ");
+        System.out.println("Indtast ID på det medlem du gerne vil redigere træningstid på: ");
     }
 
     public void vælgMedlemStævnePrint()
     {
-        System.out.println("Vælg hvilket medlem du vil indtaste stævne: ");
+        System.out.println("Vælg ID på det medlem du vil indtaste stævne information på: ");
     }
 
     public void indtastStævne()
@@ -188,7 +236,16 @@ public class Texthandler {
         System.out.println("Indtast placering i stævnet: ");
     }
 
-    public void indtastStævneDisciplin()
+
+    public void printDisciplinTid()
     {
+        System.out.println("Valg disciplin fra valgte medlem som du vil tilføje træningstid til: ");
+        System.out.println("Crawl [1], Brystsvømning [2], Butterfly[3], Rygcrawl [4], Medley [5]");
+    }
+
+    public void discValgStævne()
+    {
+        System.out.println("Vælg disciplin fra valgte medlem som du vil tilføje stævneplacering til: ");
+        System.out.println("Crawl [1], Brystsvømning [2], Butterfly[3], Rygcrawl [4], Medley [5]");
     }
 }

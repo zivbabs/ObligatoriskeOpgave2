@@ -52,7 +52,7 @@ public class Medlem {
         this.træningsDisc = træningsDisc;
     }
 
-    public void setTid(String tid) {
+    public void setTid(String bedsteTid) {
         this.bedsteTid = bedsteTid;
     }
 

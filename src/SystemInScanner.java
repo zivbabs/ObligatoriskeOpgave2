@@ -103,7 +103,7 @@ public class SystemInScanner {
                     success = true;
                 }
                 else {
-                    System.out.println("Dum dum");
+                    th.forkertInputPrint();
                     årstal = "";
                     måned = "";
                     dag = "";
@@ -128,7 +128,7 @@ public class SystemInScanner {
             try{
                 th.printMinutter();
                 String input1 = String.valueOf(inputInt());
-                if(input1.length() <= 2 && Integer.parseInt(input1) < 59){
+                if(input1.length() <= 2 && Integer.parseInt(input1) <= 59){
                     if(input1.length() == 2) {
                         min = input1;
                     }
@@ -151,20 +151,32 @@ public class SystemInScanner {
                 //Tredje input der checker at den er mindre end 2 lang og mindre end tallet 59 da det er 100 dele kun 2 decimaler
                 th.print100dele();
                 String input3 = String.valueOf(inputInt());
-                if(input3.length() <= 2 && Integer.parseInt(input3) <= 59) {
+                if(input3.length() <= 2 && Integer.parseInt(input3) <= 99) {
                     if (input3.length() == 2) {
                         mili = input3;
                     } else {
                         mili = "0"+input3;
                     }
+                }
+                if (!min.isEmpty() && !sek.isEmpty() && !mili.isEmpty()) {
                     success = true;
+                }
+                else {
+                    th.forkertInputPrint();
+                    min = "";
+                    sek = "";
+                    mili = "";
                 }
 
             }catch(Exception e){
                 th.forkertInputPrint();
             }
         }
-        tid = min+"."+sek+"."+mili;
+        tid = min+":"+sek+":"+mili;
         return tid;
+    }
+    public String inputTræner(String input) {
+
+        return input;
     }
 }
