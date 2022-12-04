@@ -175,8 +175,11 @@ public class SystemInScanner {
         tid = min+":"+sek+":"+mili;
         return tid;
     }
-    public String inputTræner(String input) {
+    public int inputTræner(int a, int b) {
+        int c = 0;
 
-        return input;
+
+
+        return c;
     }
 }

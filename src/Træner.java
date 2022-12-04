@@ -27,31 +27,20 @@ public class Træner extends Ansat{
         int a = sc.inputInt();
         th.printDisciplin(mdl.get(a).fornavn);
 
-        int b = sc.inputInt();
-        String c = valgDisciplin(b);
-        mdl.get(a).setDisciplin(c);
-
-        while(!success) {
-            th.flereDiscPrint();
-            int d = sc.inputInt();
-            //Checker om der skal vælges ekstra discipliner
-            if (d == 1) {
-
-                th.printDisciplin(mdl.get(a).fornavn);
-                int e = sc.inputInt();
-                String f = valgDisciplin(e);
-                //Checker om den allerede indeholder den disciplin der blev valgt
-                if(!mdl.get(a).discipliner.contains(f))
-                    mdl.get(a).setDisciplin(mdl.get(a).discipliner.concat("-").concat(f));
-            }
-            else {
-                success = true;
-            }
+        String b = discValg();
+        if(mdl.get(a).discipliner.contains(b)) {
+            th.harAlleredeDisciplin();
         }
-        //Kører arrayliste med ændringer tilbage til fil
-        ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
+        else if(mdl.get(a).discipliner.contains("TBD")){
+            mdl.get(a).setDisciplin(b);
+            ListeTilFil.ListeTilFilDisc(mdl, a, b);
+        }
+        else {
+            mdl.get(a).setDisciplin(mdl.get(a).discipliner.concat("-").concat(b));
+            ListeTilFil.ListeTilFilDisc(mdl, a, b);
+        }
     }
+
     //Metode med input for valg af disciplienr som vælger den disciplin der skal bruges.
     private String valgDisciplin(int input) {
         String disciplin = "";
@@ -90,41 +79,13 @@ public class Træner extends Ansat{
         mdl.get(a).setTræner(b);
 
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilKonkurrence("KonkurrenceSvømmere.txt", mdl);
-
-    }
-    //Metode til at tilføje træningstid til medlemmer hvis de ikke har en træningstid endnu.
-    public void tilføjTræningsTid() throws FileNotFoundException {
-        th.printKonkurrenceSvømmere();
-
-        FilTilListe ftl = new FilTilListe();
-        ArrayList<Medlem> mdl = new ArrayList<>();
-        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
-
-        th.vælgMedlemNyTid();
-        int a = sc.inputInt();
-
-        th.printValgteDiscipliner(mdl.get(a).discipliner);
-        th.printDisciplinTid();
-        String b = discValg();
-        mdl.get(a).setTræningsDisc(b);
-
-        th.valgTræningsTid();
-        String c = sc.inputTid();
-
-        mdl.get(a).setTid(c);
-
-        ArrayList<Medlem> tempmdl = new ArrayList<>();
-        tempmdl.add(mdl.get(a));
-
-        ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilFilAppend("Træningstider.txt", tempmdl);
+        ltf.ListeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
     }
     //Vælg af træningsdiscipliner ud fra de discipliner medlemmet er tildelt
     private String discValg() {
-
         boolean success = false;
         int a = 0;
+
         while (!success) {
             a=sc.inputInt();
             if (a < 6 && a > 0) {
@@ -137,14 +98,13 @@ public class Træner extends Ansat{
         return valgDisciplin(a);
     }
     //Redigering af træningstider ud fra de træningstider man kan se hos træningstider.txt
-    public void redigerTræningsTid() throws FileNotFoundException
-    {
+    public void redigerTræningsTid() throws FileNotFoundException {
+        th.printTræningsTider();
+
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
 
-
-        th.printTræningsTider();
         th.redigerTræningPrint();
 
         int a = sc.inputInt();
@@ -154,17 +114,17 @@ public class Træner extends Ansat{
         mdl.get(a).setTid(b);
 
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilKonkurrence("Træningstider.txt",mdl);
+        ltf.ListeTilMedlemmer("Træningstider.txt",mdl);
 
     }
     // Vælge medlem, indtaste stævne + dato, indtast placering, indtast disciplin
-    public void tilføjStævneTid() throws FileNotFoundException
-    {
+    public void tilføjStævneTid() throws FileNotFoundException {
+        th.printKonkurrenceSvømmere();
+
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         ListeTilFil ltf = new ListeTilFil();
         mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
-        th.printKonkurrenceSvømmere();
 
         th.vælgMedlemStævnePrint();
         int a = sc.inputInt();

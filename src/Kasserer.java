@@ -42,6 +42,6 @@ public class Kasserer extends Ansat{
             th.annuleretBetaling();
         }
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilKonkurrence("Medlemmer.txt", mdl);
+        ltf.ListeTilMedlemmer("Medlemmer.txt", mdl);
     }
 }

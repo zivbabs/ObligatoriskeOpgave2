@@ -36,7 +36,7 @@ public class Formand extends Ansat {
             int d = sc.inputInt();
             //Oprettelse af motionister med "," som divider til brug for indlæsning.
             if (d == 1) {
-                out1.println("Motionist, " + a + ", " + b + ", " + c + ", " + "I restance" + ", " + setDato());
+                out1.println("Motionist, " + a + ", " + b + ", " + c + ", " + "I restance");
                 success = true;
             }
             //Oprettelse af konkurrencesvømmere med "," som divider til brug for indlæsning.

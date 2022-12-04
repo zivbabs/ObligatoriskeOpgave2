@@ -1,6 +1,1 @@
-KonkurrenceSvømmer, ChuckE, Cheese, 1987-08-25, I restance, Brystsvøm, Crawl-Brystsvøm, 01:59:99, TBD, TBD
-KonkurrenceSvømmer, ChuckE, Cheese, 1987-08-25, I restance, Crawl, Crawl-Brystsvøm, 00:01:01, TBD, TBD
-KonkurrenceSvømmer, MacManSon, SonManson, 1980-12-25, Betalt 2022-12-02, Medley, Crawl-Brystsvøm-Butterfly, 10:10:10, TBD, FK
-KonkurrenceSvømmer, MacManSon, SonManson, 1980-12-25, Betalt 2022-12-02, Medley, Crawl-Brystsvøm-Butterfly, 59:59:59, TBD, FK
-KonkurrenceSvømmer, MacManSon, SonManson, 1980-12-25, Betalt 2022-12-02, Rygcrawl, Crawl-Brystsvøm-Butterfly, 01:01:01, TBD, FK
-KonkurrenceSvømmer, ChuckE, Cheese, 1987-08-25, I restance, Brystsvøm, Crawl-Brystsvøm, 00:00:00, TBD, TBD
+KonkurrenceSvømmer, ChuckE, Cheese, 1987-08-25, I restance, Crawl, Crawl, TBD, TBD, TBD

@@ -7,23 +7,22 @@ public class Medlem {
     protected String restance;
     protected String træningsDisc;
     protected String discipliner;
-    protected String bedsteTid;
+    protected String resultat;
     protected String stævne;
     protected String træner;
     //Constructor uden parametre
     public Medlem(){
     }
     //Constructor med parametre til motionister bruger this for at undgå sættere i subclasses.
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String træningsDisc){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.alder = alder;
         this.restance = restance;
-        this.træningsDisc = træningsDisc;
     }
     //Constructor med parametre til konkurrencesvømmere bruger this for at undgå settere i subclasses.
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String træningsDisc, String discipliner, String bedsteTid, String stævne, String træner){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String træningsDisc, String discipliner, String resultat, String stævne, String træner){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
@@ -31,7 +30,7 @@ public class Medlem {
         this.restance = restance;
         this.træningsDisc = træningsDisc;
         this.discipliner = discipliner;
-        this.bedsteTid = bedsteTid;
+        this.resultat = resultat;
         this.stævne = stævne;
         this.træner = træner;
     }
@@ -52,8 +51,8 @@ public class Medlem {
         this.træningsDisc = træningsDisc;
     }
 
-    public void setTid(String bedsteTid) {
-        this.bedsteTid = bedsteTid;
+    public void setTid(String resultat) {
+        this.resultat = resultat;
     }
 
     public void setStævne(String stævne)
@@ -63,6 +62,6 @@ public class Medlem {
 
     public void setPlacering(int placering)
     {
-        bedsteTid = String.valueOf(placering);
+        resultat = String.valueOf(placering);
     }
 }

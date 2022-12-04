@@ -209,7 +209,7 @@ public class Texthandler {
         System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
 
         for(Medlem m : mdl){
-            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.træningsDisc, m.bedsteTid);
+            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.træningsDisc, m.resultat);
             System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
             idcounter++;
         }
@@ -247,5 +247,9 @@ public class Texthandler {
     {
         System.out.println("Vælg disciplin fra valgte medlem som du vil tilføje stævneplacering til: ");
         System.out.println("Crawl [1], Brystsvømning [2], Butterfly[3], Rygcrawl [4], Medley [5]");
+    }
+
+    public void harAlleredeDisciplin() {
+        System.out.println("Medlem har allerede den disciplin tilføjet.");
     }
 }
