@@ -1,10 +1,2 @@
-KonkurrenceSvømmer, ChuckE, Cheese, 1987-08-25, I restance, 2022-11-25, TBD, TBD, TBD, TBD
-KonkurrenceSvømmer, MacManSon, SonManson, 1980-12-25, Betalt 2022-12-02, 2022-11-25, TBD, TBD, TBD, TBD
-KonkurrenceSvømmer, Manden, Eftermanden, 1950-06-20, I restance, 2022-11-30, TBD, TBD, TBD, TBD
-KonkurrenceSvømmer, Lars, Trier, 1976-02-19, I restance, 2022-12-02, TBD, TBD, TBD, TBD
-Motionist, Flat, Tits, 1957-07-11, I restance
-Motionist, Big, Schlong, 1932-05-10, I restance
-Motionist, øæå, åæø, 2000-01-01, Betalt 2022-12-02
-Motionist, bob, bobette, 1900-05-20, I restance
-Motionist, Torden, Skjold, 2000-09-06, Betalt 2022-12-02
-Motionist, Fartblossom, MacFartSon, 1934-01-07, Betalt 2022-12-04
+KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, TBC, TBD, TBD, TBD, TBD
+Motionist, Manson, Man, 1987-05-17, I restance, Passiv

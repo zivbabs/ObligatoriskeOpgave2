@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        Kasserer ksr = new Kasserer();
-        ksr.betalKontigentMedlemmer();
+        Formand fmd = new Formand();
+        fmd.opretMedlem();
     }
 }

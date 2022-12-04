@@ -252,4 +252,8 @@ public class Texthandler {
     public void harAlleredeDisciplin() {
         System.out.println("Medlem har allerede den disciplin tilføjet.");
     }
+
+    public void opretStatus() {
+        System.out.println("Indtast om medlem er aktiv[1] eller passiv[2].");
+    }
 }

@@ -5,6 +5,7 @@ public class Medlem {
     protected String efternavn;
     protected String alder;
     protected String restance;
+    protected String status;
     protected String træningsDisc;
     protected String discipliner;
     protected String resultat;
@@ -14,20 +15,22 @@ public class Medlem {
     public Medlem(){
     }
     //Constructor med parametre til motionister bruger this for at undgå sættere i subclasses.
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String status){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.alder = alder;
         this.restance = restance;
+        this.status = status;
     }
     //Constructor med parametre til konkurrencesvømmere bruger this for at undgå settere i subclasses.
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String træningsDisc, String discipliner, String resultat, String stævne, String træner){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String status, String træningsDisc, String discipliner, String resultat, String stævne, String træner){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.alder = alder;
         this.restance = restance;
+        this.status = status;
         this.træningsDisc = træningsDisc;
         this.discipliner = discipliner;
         this.resultat = resultat;
