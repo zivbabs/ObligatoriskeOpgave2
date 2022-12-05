@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        Formand fmd = new Formand();
-        fmd.opretMedlem();
+        Træner trn = new Træner();
+        trn.printTop5();
     }
 }

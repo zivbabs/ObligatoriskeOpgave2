@@ -148,53 +148,62 @@ public class Træner extends Ansat{
         ltf.ListeTilFilAppend("Stævner.txt", tempmdl);
 
     }
-    public void printTop5() throws FileNotFoundException
-    {
+    public void printTop5() throws FileNotFoundException {
 
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListe("Konkurrencesvømmer.txt"));
+        mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
         ArrayList<Medlem> temp1 = new ArrayList<>();
         ArrayList<Medlem> temp2 = new ArrayList<>();
-
 
         th.vælgTop5Disc();
         String a = "";
         a = discValg();
-        int p1;
-        int p2;
 
         for (Medlem m : mdl) {
-
-            if (a.equals(m.discipliner)); {
+            if (a.equals(m.træningsDisc)) {
                 temp1.add(m);
             }
         }
-
         for (int i = 0; i<=temp1.size(); i++) {
-            for (int j = i; j<=temp1.size(); j++) {
-                if (Integer.parseInt(temp1.get(j).resultat)>Integer.parseInt(temp1.get(i).resultat)); {
-                    temp2.add(temp1.get(i));
-                    temp2.add(temp1.get(j));
-                    p1 = temp1.indexOf(i);
-                    p2 = temp1.indexOf(j);
-                    temp1.remove(i);
-                    temp1.add(p1,temp2.get(1));
-                    temp1.remove(j);
-                    temp1.add(p2,temp2.get(0));
-                    temp2.removeAll(mdl);
-
+            for (int j = 0; j<=temp1.size(); j++) {
+                if (Integer.parseInt(temp1.get(j+1).resultat.substring(0,2))>Integer.parseInt(temp1.get(i).resultat.substring(0,2))) {
+                    listSortTop5(mdl, temp1, temp2, i, j);
+                }
+                else if(temp1.get(j+1) != null && Integer.parseInt(temp1.get(j+1).resultat.substring(3,5))>Integer.parseInt(temp1.get(i).resultat.substring(3,5))){
+                    listSortTop5(mdl, temp1, temp2, i, j);
+                }
+                else if(temp1.get(j+1) != null && Integer.parseInt(temp1.get(j+1).resultat.substring(6,8))>Integer.parseInt(temp1.get(i).resultat.substring(6,8))){
+                    listSortTop5(mdl, temp1, temp2, i, j);
                 }
             }
         }
+        /*if(temp1.size() == 5) {
+            for (int k = 0; k < 5; k++) {
+                temp1.get(k);
+            }
+        }*/
+        //else{
+            int f = temp1.size();
+            for (int l = 0; l < f; l++ ){
+                temp1.get(l);
+                System.out.println(temp1.get(l).fornavn + " " + temp1.get(l).resultat);
+            }
+        //}
+    }
 
-        for (int k =0; k<5; k++); {
-            temp1.get(k);
-        }
-
-
-
-
-
+    private void listSortTop5(ArrayList<Medlem> mdl, ArrayList<Medlem> temp1, ArrayList<Medlem> temp2, int i, int j) {
+        int p1;
+        int p2;
+        temp2.add(temp1.get(i));
+        temp2.add(temp1.get(j));
+        p1 = temp1.indexOf(i);
+        p2 = temp1.indexOf(j);
+        temp1.remove(i);
+        temp1.add(p1,temp2.get(1));
+        temp1.remove(j);
+        temp1.add(p2,temp2.get(0));
+        temp2.removeAll(mdl);
     }
 }
+
