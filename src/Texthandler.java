@@ -256,4 +256,8 @@ public class Texthandler {
     public void opretStatus() {
         System.out.println("Indtast om medlem er aktiv[1] eller passiv[2].");
     }
+
+    public void vælgTop5Disc()
+    {
+    }
 }

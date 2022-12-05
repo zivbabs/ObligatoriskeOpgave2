@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException; //Import af exception og arraylist
 import java.util.ArrayList;
+import java.util.List;
 
 public class Træner extends Ansat{
     //Import af de scanner til inputs og texthandler til konsol udprintninger.
@@ -147,7 +148,53 @@ public class Træner extends Ansat{
         ltf.ListeTilFilAppend("Stævner.txt", tempmdl);
 
     }
-    public void printTop5(){
+    public void printTop5() throws FileNotFoundException
+    {
+
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.FilTilListe("Konkurrencesvømmer.txt"));
+        ArrayList<Medlem> temp1 = new ArrayList<>();
+        ArrayList<Medlem> temp2 = new ArrayList<>();
+
+
+        th.vælgTop5Disc();
+        String a = "";
+        a = discValg();
+        int p1;
+        int p2;
+
+        for (Medlem m : mdl) {
+
+            if (a.equals(m.discipliner)); {
+                temp1.add(m);
+            }
+        }
+
+        for (int i = 0; i<=temp1.size(); i++) {
+            for (int j = i; j<=temp1.size(); j++) {
+                if (Integer.parseInt(temp1.get(j).resultat)>Integer.parseInt(temp1.get(i).resultat)); {
+                    temp2.add(temp1.get(i));
+                    temp2.add(temp1.get(j));
+                    p1 = temp1.indexOf(i);
+                    p2 = temp1.indexOf(j);
+                    temp1.remove(i);
+                    temp1.add(p1,temp2.get(1));
+                    temp1.remove(j);
+                    temp1.add(p2,temp2.get(0));
+                    temp2.removeAll(mdl);
+
+                }
+            }
+        }
+
+        for (int k =0; k<5; k++); {
+            temp1.get(k);
+        }
+
+
+
+
 
     }
 }
