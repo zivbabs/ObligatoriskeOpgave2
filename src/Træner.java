@@ -1,6 +1,5 @@
 import java.io.FileNotFoundException; //Import af exception og arraylist
 import java.util.ArrayList;
-import java.util.List;
 
 public class Træner extends Ansat{
     //Import af de scanner til inputs og texthandler til konsol udprintninger.
@@ -21,11 +20,12 @@ public class Træner extends Ansat{
 
         FilTilListe ftl = new FilTilListe();
         ArrayList<Medlem> mdl = new ArrayList<>();
-        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+        mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
 
         th.redigerDisciplin();
 
-        int a = sc.inputInt();
+        int x = sc.inputInt();
+        int a = sc.inputOOBLength(x, mdl.size());
         th.printDisciplin(mdl.get(a).fornavn);
 
         String b = discValg();
@@ -69,13 +69,14 @@ public class Træner extends Ansat{
 
         FilTilListe ftl = new FilTilListe();
         ArrayList<Medlem> mdl = new ArrayList<>();
-        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+        mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
 
         th.redigerTrænerPrint();
-        int a = sc.inputInt();
+        int x = sc.inputInt();
+        int a = sc.inputOOBLength(x, mdl.size());
 
         th.indtastTræner();
-        String b = sc.inputString();
+        String b = sc.inputTræner();
 
         mdl.get(a).setTræner(b);
 
@@ -104,11 +105,12 @@ public class Træner extends Ansat{
 
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
+        mdl.addAll(ftl.filTilListe("Træningstider.txt"));
 
         th.redigerTræningPrint();
 
-        int a = sc.inputInt();
+        int x = sc.inputInt();
+        int a = sc.inputOOBLength(x, mdl.size());
 
         th.valgTræningsTid();
         String b = sc.inputTid();
@@ -125,10 +127,11 @@ public class Træner extends Ansat{
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         ListeTilFil ltf = new ListeTilFil();
-        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+        mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
 
         th.vælgMedlemStævnePrint();
-        int a = sc.inputInt();
+        int x = sc.inputInt();
+        int a = sc.inputOOBLength(x, mdl.size());
 
         th.indtastStævne();
         String b = sc.inputString();
@@ -149,61 +152,31 @@ public class Træner extends Ansat{
 
     }
     public void printTop5() throws FileNotFoundException {
-
-        ArrayList<Medlem> mdl = new ArrayList<>();
-        FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
-        ArrayList<Medlem> temp1 = new ArrayList<>();
-        ArrayList<Medlem> temp2 = new ArrayList<>();
-
-        th.vælgTop5Disc();
-        String a = "";
-        a = discValg();
-
-        for (Medlem m : mdl) {
-            if (a.equals(m.træningsDisc)) {
-                temp1.add(m);
-            }
-        }
-        for (int i = 0; i<=temp1.size(); i++) {
-            for (int j = 0; j<=temp1.size(); j++) {
-                if (Integer.parseInt(temp1.get(j+1).resultat.substring(0,2))>Integer.parseInt(temp1.get(i).resultat.substring(0,2))) {
-                    listSortTop5(mdl, temp1, temp2, i, j);
-                }
-                else if(temp1.get(j+1) != null && Integer.parseInt(temp1.get(j+1).resultat.substring(3,5))>Integer.parseInt(temp1.get(i).resultat.substring(3,5))){
-                    listSortTop5(mdl, temp1, temp2, i, j);
-                }
-                else if(temp1.get(j+1) != null && Integer.parseInt(temp1.get(j+1).resultat.substring(6,8))>Integer.parseInt(temp1.get(i).resultat.substring(6,8))){
-                    listSortTop5(mdl, temp1, temp2, i, j);
-                }
-            }
-        }
-        /*if(temp1.size() == 5) {
-            for (int k = 0; k < 5; k++) {
-                temp1.get(k);
-            }
-        }*/
-        //else{
-            int f = temp1.size();
-            for (int l = 0; l < f; l++ ){
-                temp1.get(l);
-                System.out.println(temp1.get(l).fornavn + " " + temp1.get(l).resultat);
-            }
-        //}
+        th.vælgDiscTop5();
+        String a = discValg();
+        th.printTop5(a);
     }
 
-    private void listSortTop5(ArrayList<Medlem> mdl, ArrayList<Medlem> temp1, ArrayList<Medlem> temp2, int i, int j) {
-        int p1;
-        int p2;
-        temp2.add(temp1.get(i));
-        temp2.add(temp1.get(j));
-        p1 = temp1.indexOf(i);
-        p2 = temp1.indexOf(j);
-        temp1.remove(i);
-        temp1.add(p1,temp2.get(1));
-        temp1.remove(j);
-        temp1.add(p2,temp2.get(0));
-        temp2.removeAll(mdl);
+    public void menu() throws FileNotFoundException {
+        boolean success = false;
+
+        while(!success){
+
+            th.trænerMenuOptions();
+            int i = sc.inputInt();
+
+            switch(i){
+                case 1 -> tilFøjdisciplin();
+                case 2 -> tilføjTræner();
+                case 3 -> redigerTræningsTid();
+                case 4 -> tilføjStævneTid();
+                case 5 -> printTop5();
+                case 6 -> success = true;
+            }
+            if(i < 1 || i > 6){
+                th.forkertInputPrint();
+            }
+        }
     }
 }
 

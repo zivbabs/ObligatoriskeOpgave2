@@ -1,10 +1,8 @@
 import java.io.FileNotFoundException;
 
-public class Main {
-
+public class DelfinenSvømmeklub {
     public static void main(String[] args) throws FileNotFoundException {
-
-        Træner trn = new Træner();
-        trn.printTop5();
+        Ansat a = new Ansat();
+        a.login();
     }
 }

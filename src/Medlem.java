@@ -11,9 +11,6 @@ public class Medlem {
     protected String resultat;
     protected String stævne;
     protected String træner;
-    //Constructor uden parametre
-    public Medlem(){
-    }
     //Constructor med parametre til motionister bruger this for at undgå sættere i subclasses.
     public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String status){
         this.medlemsskab = medlemsskab;

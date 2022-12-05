@@ -1,5 +1,7 @@
 import java.io.FileNotFoundException; //Import af exception og arraylist til metoder
 import java.util.ArrayList;
+import java.util.Comparator;
+
 //Klasse der indeholder alle udprintninger til konsol da en del af krav er at det skal være overskueligt at læse i konsol.
 //Det betyder der vil være en stor del af opgaven der er den korrekte formattering af udprintninger.
 //Flere metoder i udprintning skal også bruges flere gange og nogle formatteringer kan laves om til metoder for at undgå repetition.
@@ -43,7 +45,7 @@ public class Texthandler {
         int counter2 = 0;
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
+        mdl.addAll(ftl.filTilListe("Medlemmer.txt"));
 
         for(Medlem m : mdl){
             if(m instanceof Motionist && m.restance.equals("I restance")){
@@ -76,7 +78,7 @@ public class Texthandler {
         int idcounter = 0;
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListe("Medlemmer.txt"));
+        mdl.addAll(ftl.filTilListe("Medlemmer.txt"));
 
         System.out.printf("MEDLEMMER DATA%n");
         System.out.printf("-----------------------------------------------------------------------------------------------------------------------------%n");
@@ -103,12 +105,12 @@ public class Texthandler {
     }
     //visKontingentBeløb har paramtre alder og medlemsskab ind for at checke medlemsinfo så den kan vise korrekte beløb.
     public void visKontingentBeløb(int alder, String medlemsskab) {
-        String beløb = "";
+        String beløb;
 
         if(alder < 18 && medlemsskab.contains("KonkurrenceSvømmer")){
             beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1000 kr.";
         }
-        else if(alder > 18 && medlemsskab.contains("KonkurrenceSvømmer")){
+        else if(alder > 18 && alder < 60 && medlemsskab.contains("KonkurrenceSvømmer")){
             beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1600 kr.";
         }
         else if(alder >= 60 && medlemsskab.contains("KonkurrenceSvømmer")){
@@ -136,7 +138,7 @@ public class Texthandler {
     public void printKonkurrenceSvømmere() throws FileNotFoundException {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListe("KonkurrenceSvømmere.txt"));
+        mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
         int idcounter = 0;
 
         System.out.printf("KONKURRENCESVØMMER DATA%n");
@@ -159,11 +161,6 @@ public class Texthandler {
         System.out.println("Hvilken disciplin vil du gerne tilføje til " + fornavn + ".");
         System.out.println("Crawl [1], Brystsvømning [2], Butterfly[3], Rygcrawl [4], Medley [5]");
     }
-
-    public void flereDiscPrint() {
-        System.out.println("Skal der tilføjes flere discipliner? Ja [1] ellers tryk vilkårligt tal");
-    }
-
     public void redigerTrænerPrint() {
         System.out.println("Vælg ID ud fra medlem som du gerne vil tilføje træner til.");
     }
@@ -171,15 +168,6 @@ public class Texthandler {
     public void indtastTræner() {
         System.out.println("Indtast initialer på den træner du gerne vil tilføje (Maks 3 bogstaver). Fx. FOK");
     }
-
-    public void vælgMedlemNyTid() {
-        System.out.println("Vælg ID ud fra medlem du gerne vil oprette ny træningstid på.");
-    }
-
-    public void printValgteDiscipliner(String dicipliner) {
-        System.out.println("Det valgte medlem har " + dicipliner + ".");
-    }
-
     public void valgTræningsTid() {
         System.out.println("Indtast ny træningstid på medlem.");
     }
@@ -200,7 +188,7 @@ public class Texthandler {
     {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
-        mdl.addAll(ftl.FilTilListe("Træningstider.txt"));
+        mdl.addAll(ftl.filTilListe("Træningstider.txt"));
         int idcounter = 0;
 
         System.out.printf("TRÆNINGSTIDER DATA%n");
@@ -235,14 +223,6 @@ public class Texthandler {
     {
         System.out.println("Indtast placering i stævnet: ");
     }
-
-
-    public void printDisciplinTid()
-    {
-        System.out.println("Valg disciplin fra valgte medlem som du vil tilføje træningstid til: ");
-        System.out.println("Crawl [1], Brystsvømning [2], Butterfly[3], Rygcrawl [4], Medley [5]");
-    }
-
     public void discValgStævne()
     {
         System.out.println("Vælg disciplin fra valgte medlem som du vil tilføje stævneplacering til: ");
@@ -257,7 +237,53 @@ public class Texthandler {
         System.out.println("Indtast om medlem er aktiv[1] eller passiv[2].");
     }
 
-    public void vælgTop5Disc()
-    {
+    public void printTop5(String a) throws FileNotFoundException {
+
+        ArrayList<Medlem> mdl = new ArrayList<>();
+        FilTilListe ftl = new FilTilListe();
+        mdl.addAll(ftl.filTilListe("Træningstider.txt"));
+        ArrayList<Medlem> temp = new ArrayList<>();
+
+        for (Medlem m : mdl) {
+            if (a.equals(m.træningsDisc)) {
+                temp.add(m);
+            }
+        }
+        temp.sort(Comparator.comparing(m -> m.resultat));
+
+        System.out.printf("BEDSTE TIDER " + a.toUpperCase() + "%n");
+        System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
+        System.out.printf("| %-25s | %-25s | %-12s | %-41s | %-7s | %-10s |%n", "Fornavn", "Efternavn", "Fødselsdato", "Discipliner", "Træner", "Resultat");
+        System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
+
+        for (int i = 0; i < 5; i++) {
+                System.out.printf("| %-25s | %-25s | %-12s | %-41s | %-7s | %-10s |%n", temp.get(i).fornavn, temp.get(i).efternavn, temp.get(i).alder, temp.get(i).træningsDisc, temp.get(i).træner, temp.get(i).resultat);
+                System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
+        }
+    }
+
+    public void vælgDiscTop5() {
+        System.out.println("Vælg disciplin du gerne vil se top5 for.");
+        System.out.println("Crawl [1], Brystsvømning [2], Butterfly[3], Rygcrawl [4], Medley [5]");
+    }
+
+    public void passwordAnsat() {
+        System.out.println("Indtast dit respektive password for at logge ind.");
+    }
+
+    public void loginOptions() {
+        System.out.println("Indtast [1] for login som Formand\nIndtast [2] for login som Kasserer\nIndtast [3] for login som Træner\nIndtast [4] for at lukke programmet.");
+    }
+
+    public void formandMenuOptions() {
+        System.out.println("Indtast [1] for a oprette medlem\nIndtast [2] for at gå tilbage til hovedmenuen.");
+    }
+
+    public void kassererMenuOptions() {
+        System.out.println("Indtast [1] for at printe medlemmer i restance\nIndtast [2] for at redigere kontingentbetaling\nindtast [3] for at gå tilbage til hovedmenuen.");
+    }
+
+    public void trænerMenuOptions() {
+        System.out.println("Indtast [1] for at registrere svømmediscipliner\nIndtast [2] for at registrere træner\nIndtast [3] for at redigere træningstid\nIndtast [4] for at indtaste en stævnetid\nIndtast [5] for at se top5 indenfor en disciplin\nIndtast [6] for at vende tilbage til hovedmenuen.");
     }
 }

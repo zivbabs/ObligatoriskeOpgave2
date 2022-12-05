@@ -75,4 +75,22 @@ public class Formand extends Ansat {
         }
         return status;
     }
+
+    public void menu() throws FileNotFoundException {
+        boolean success = false;
+
+        while(!success){
+
+            th.formandMenuOptions();
+            int i = sc.inputInt();
+
+            switch(i){
+                case 1 -> opretMedlem();
+                case 2 -> success = true;
+            }
+            if(i < 1 || i > 2){
+                th.forkertInputPrint();
+            }
+        }
+    }
 }

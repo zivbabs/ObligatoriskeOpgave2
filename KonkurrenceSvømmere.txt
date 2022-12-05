@@ -1,1 +1,2 @@
-KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, TBD, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, TBD, TBD, TBD
+KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, TBD, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, TBD, TBD, HA
+KonkurrenceSvømmer, Banana, Man, 1375-01-29, I restance, Aktiv, TBD, TBD, TBD, TBD, TBD

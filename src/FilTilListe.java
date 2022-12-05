@@ -6,7 +6,7 @@ import java.util.Scanner;
 //Klassen bruges til at undgå repetition da metoder skal bruges flere gange.
 public class FilTilListe {
     //Metode til at kører filer ind i en liste og sende listen videre
-    public ArrayList<Medlem> FilTilListe(String file) throws FileNotFoundException {
+    public ArrayList<Medlem> filTilListe(String file) throws FileNotFoundException {
         File filInput = new File(file);
         Scanner sc = new Scanner(filInput);
         ArrayList<Medlem> mdl = new ArrayList<>();
@@ -38,5 +38,22 @@ public class FilTilListe {
         //Sorterering efter medlemsskab så motionister og konkurrencesvømmere kommer til at stå sammen.
         mdl.sort(Comparator.comparing(m -> m.medlemsskab));
         return mdl;
+    }
+    public ArrayList<Ansat> filTilListeAnsatte(String file) throws FileNotFoundException {
+        File filInput = new File(file);
+        Scanner sc = new Scanner(filInput);
+        ArrayList<Ansat> ansatte = new ArrayList<>();
+
+        while(sc.hasNextLine()){
+            String[] i = sc.nextLine().split(",");
+            String medlemsskab = i[0].trim();
+            String fornavn = i[1].trim();
+            String efternavn = i[2].trim();
+            String pw = i[3].trim();
+
+            Ansat ansat = new Ansat(medlemsskab, fornavn, efternavn, pw);
+            ansatte.add(ansat);
+        }
+        return ansatte;
     }
 }

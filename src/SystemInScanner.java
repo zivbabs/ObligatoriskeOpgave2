@@ -62,7 +62,6 @@ public class SystemInScanner {
     }
     //Metode til at bygge fødselsdato til en string som kan parses til localdate
     public String inputAlder() {
-        String fDato = "";
         boolean success = false;
         String årstal = "";
         String måned = "";
@@ -113,12 +112,10 @@ public class SystemInScanner {
             }
         }
         //Bygger string som en localdate
-        fDato = årstal + "-" + måned + "-" + dag;
-        return fDato;
+        return årstal + "-" + måned + "-" + dag;
     }
 
     public String inputTid() {
-        String tid = "";
         String min = "";
         String sek = "";
         String mili = "";
@@ -128,7 +125,7 @@ public class SystemInScanner {
             try{
                 th.printMinutter();
                 String input1 = String.valueOf(inputInt());
-                if(input1.length() <= 2 && Integer.parseInt(input1) <= 59){
+                if(input1.length() <= 2 && Integer.parseInt(input1) <= 59 && Integer.parseInt(input1) >= 0){
                     if(input1.length() == 2) {
                         min = input1;
                     }
@@ -139,7 +136,7 @@ public class SystemInScanner {
                 //andet input der checker at den er mindre end 2 lang og mindre end tallet 59 da det er sekunder
                 th.printSekunder();
                 String input2 = String.valueOf(inputInt());
-                if(input2.length() <= 2 && Integer.parseInt(input2) <= 59){
+                if(input2.length() <= 2 && Integer.parseInt(input2) <= 59 && Integer.parseInt(input2) >= 0){
                     //checker her om den er længden kun er 1 hvis den er skal der tilføjes et 0
                     if(input2.length() == 2){
                         sek = input2;
@@ -151,7 +148,7 @@ public class SystemInScanner {
                 //Tredje input der checker at den er mindre end 2 lang og mindre end tallet 59 da det er 100 dele kun 2 decimaler
                 th.print100dele();
                 String input3 = String.valueOf(inputInt());
-                if(input3.length() <= 2 && Integer.parseInt(input3) <= 99) {
+                if(input3.length() <= 2 && Integer.parseInt(input3) <= 99 && Integer.parseInt(input1) >= 0) {
                     if (input3.length() == 2) {
                         mili = input3;
                     } else {
@@ -172,14 +169,41 @@ public class SystemInScanner {
                 th.forkertInputPrint();
             }
         }
-        tid = min+":"+sek+":"+mili;
-        return tid;
+        return min+":"+sek+":"+mili;
     }
-    public int inputTræner(int a, int b) {
+    public String inputTræner() {
+        String b = "";
+        boolean success = false;
+
+        while(!success){
+            String a = inputString();
+
+            if(a.length() <= 3 && a.length() > 1){
+                b = a.toUpperCase();
+                success = true;
+            }
+            else{
+                th.forkertInputPrint();
+            }
+        }
+        return b;
+    }
+    public int inputOOBLength(int input, int length){
         int c = 0;
+        boolean success = false;
 
+        while(!success){
 
+            if(input <= length -1 && input > -1){
+                c = input;
+                success = true;
+            }
+            else{
+                th.forkertInputPrint();
+                input = inputInt();
+            }
 
+        }
         return c;
     }
 }
