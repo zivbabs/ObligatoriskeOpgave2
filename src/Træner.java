@@ -35,11 +35,11 @@ public class Træner extends Ansat{
         }
         else if(mdl.get(a).discipliner.contains("TBD")){
             mdl.get(a).setDisciplin(b);
-            ListeTilFil.listeTilFilDisc(mdl, a, b);
+            ltf.listeTilFilDisc(mdl, a, b);
         }
         else {
             mdl.get(a).setDisciplin(mdl.get(a).discipliner.concat("-").concat(b));
-            ListeTilFil.listeTilFilDisc(mdl, a, b);
+            ltf.listeTilFilDisc(mdl, a, b);
         }
     }
 
