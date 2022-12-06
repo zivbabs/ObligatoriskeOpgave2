@@ -43,7 +43,7 @@ public class Kasserer extends Ansat{
             th.annuleretBetaling();
         }
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilMedlemmer("Medlemmer.txt", mdl);
+        ltf.listeTilMedlemmer("Medlemmer.txt", mdl);
     }
 
     public void menu() throws FileNotFoundException {

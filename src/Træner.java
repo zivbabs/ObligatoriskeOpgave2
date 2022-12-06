@@ -34,11 +34,11 @@ public class Træner extends Ansat{
         }
         else if(mdl.get(a).discipliner.contains("TBD")){
             mdl.get(a).setDisciplin(b);
-            ListeTilFil.ListeTilFilDisc(mdl, a, b);
+            ListeTilFil.listeTilFilDisc(mdl, a, b);
         }
         else {
             mdl.get(a).setDisciplin(mdl.get(a).discipliner.concat("-").concat(b));
-            ListeTilFil.ListeTilFilDisc(mdl, a, b);
+            ListeTilFil.listeTilFilDisc(mdl, a, b);
         }
     }
 
@@ -81,7 +81,7 @@ public class Træner extends Ansat{
         mdl.get(a).setTræner(b);
 
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
+        ltf.listeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
     }
     //Vælg af træningsdiscipliner ud fra de discipliner medlemmet er tildelt
     private String discValg() {
@@ -117,7 +117,7 @@ public class Træner extends Ansat{
         mdl.get(a).setTid(b);
 
         ListeTilFil ltf = new ListeTilFil();
-        ltf.ListeTilMedlemmer("Træningstider.txt",mdl);
+        ltf.listeTilMedlemmer("Træningstider.txt",mdl);
 
     }
     // Vælge medlem, indtaste stævne + dato, indtast placering, indtast disciplin
@@ -148,7 +148,7 @@ public class Træner extends Ansat{
 
         ArrayList<Medlem> tempmdl = new ArrayList<>();
         tempmdl.add(mdl.get(a));
-        ltf.ListeTilFilAppend("Stævner.txt", tempmdl);
+        ltf.listeTilFilAppend("Stævner.txt", tempmdl);
 
     }
     public void printTop5() throws FileNotFoundException {

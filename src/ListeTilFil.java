@@ -4,9 +4,9 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 //Klassen bruges til at undgå repetition da det metoder bliver brugt mange gange.
 public class ListeTilFil {
-    public static void ListeTilFilDisc(ArrayList<Medlem> mdl, int a, String b) throws FileNotFoundException {
+    public static void listeTilFilDisc(ArrayList<Medlem> mdl, int a, String b) throws FileNotFoundException {
             ListeTilFil ltf = new ListeTilFil();
-            ltf.ListeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
+            ltf.listeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
 
             mdl.get(a).setTræningsDisc(b);
             PrintStream out = new PrintStream(new FileOutputStream("Træningstider.txt", true));
@@ -14,7 +14,7 @@ public class ListeTilFil {
     }
 
     //Metode til at køre listen over til en fil.
-    public void ListeTilMedlemmer(String file, ArrayList<Medlem> list) throws FileNotFoundException {
+    public void listeTilMedlemmer(String file, ArrayList<Medlem> list) throws FileNotFoundException {
         PrintStream out = new PrintStream(new FileOutputStream(file));
         //Kører et for each loop med typen "Medlem" som vi kalder "m" for hvert "list" der er.
         for(Medlem m : list){
@@ -25,7 +25,7 @@ public class ListeTilFil {
             }
         }
     }
-    public void ListeTilFilAppend(String file, ArrayList<Medlem> list) throws FileNotFoundException
+    public void listeTilFilAppend(String file, ArrayList<Medlem> list) throws FileNotFoundException
     {
         PrintStream out = new PrintStream(new FileOutputStream(file,true));
         for(Medlem m : list) {
