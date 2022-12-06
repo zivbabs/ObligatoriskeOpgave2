@@ -19,6 +19,7 @@ public class Træner extends Ansat{
         th.printKonkurrenceSvømmere();
 
         FilTilListe ftl = new FilTilListe();
+        ListeTilFil ltf = new ListeTilFil();
         ArrayList<Medlem> mdl = new ArrayList<>();
         mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
 

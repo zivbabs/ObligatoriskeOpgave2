@@ -4,7 +4,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 //Klassen bruges til at undgå repetition da det metoder bliver brugt mange gange.
 public class ListeTilFil {
-    public static void listeTilFilDisc(ArrayList<Medlem> mdl, int a, String b) throws FileNotFoundException {
+    public void listeTilFilDisc(ArrayList<Medlem> mdl, int a, String b) throws FileNotFoundException {
             ListeTilFil ltf = new ListeTilFil();
             ltf.listeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
 
