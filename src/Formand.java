@@ -34,7 +34,7 @@ public class Formand extends Ansat {
 
         while (!success) {
             //Valg mellem motionist eller konkurrencesvømmer
-            th.opretMedlemMedlemskab();
+            th.opretMedlemskab();
             int d = sc.inputInt();
             //Oprettelse af motionister med "," som divider til brug for indlæsning.
             if (d == 1) {

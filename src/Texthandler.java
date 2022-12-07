@@ -19,7 +19,7 @@ public class Texthandler {
         System.out.println("Du har indtastet en karakter som ikke er godkendt. Prøv igen.");
     }
 
-    public void opretMedlemMedlemskab(){
+    public void opretMedlemskab(){
         System.out.println("Skal det være: \nMotionist [1] \nKonkurrenceSvømmer [2]");
 
     }
@@ -104,16 +104,16 @@ public class Texthandler {
         System.out.println("Medlem har stadig ikke betalt.");
     }
     //visKontingentBeløb har paramtre alder og medlemsskab ind for at checke medlemsinfo så den kan vise korrekte beløb.
-    public void visKontingentBeløb(int alder, String medlemsskab) {
+    public void visKontingentBeløb(int alder, String medlemsskab, String status) {
         String beløb;
 
-        if(alder < 18 && medlemsskab.contains("KonkurrenceSvømmer")){
+        if(alder < 18 && medlemsskab.equals("KonkurrenceSvømmer") && status.equals("Aktiv")){
             beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1000 kr.";
         }
-        else if(alder > 18 && alder < 60 && medlemsskab.contains("KonkurrenceSvømmer")){
+        else if(alder > 18 && alder < 60 && medlemsskab.equals("KonkurrenceSvømmer") && status.equals("Aktiv")){
             beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1600 kr.";
         }
-        else if(alder >= 60 && medlemsskab.contains("KonkurrenceSvømmer")){
+        else if(alder >= 60 && medlemsskab.contains("KonkurrenceSvømmer") && status.equals("Aktiv")){
             beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1200 kr.";
         }
         else{

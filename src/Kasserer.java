@@ -33,7 +33,7 @@ public class Kasserer extends Ansat{
         int k = sc.inputOOBLength(i, mdl.size());
         int alder = Period.between(LocalDate.parse(mdl.get(k).alder), LocalDate.now()).getYears();
         //Metode der udregner og printer det korrekte kontingent der skal betales ud fra alder og medlemsskab.
-        th.visKontingentBeløb(alder, mdl.get(k).medlemsskab);
+        th.visKontingentBeløb(alder, mdl.get(k).medlemsskab, mdl.get(k).status);
         //Extra check om du medlemmet har betalt eller ej, da det foregår eksternt.
         int j = sc.inputInt();
         if(j == 1) {
