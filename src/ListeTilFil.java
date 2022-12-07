@@ -4,6 +4,9 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 //Klassen bruges til at undgå repetition da det metoder bliver brugt mange gange.
 public class ListeTilFil {
+
+    //Metode som tager ind en liste og smider den over i listeTilMedlemmer() som overskriver "Konkurrencesvømmere.txt.
+    //Derefter appender den et valgt medlem med valgt disciplin til træningstider
     public void listeTilFilDisc(ArrayList<Medlem> mdl, int a, String b) throws FileNotFoundException {
             ListeTilFil ltf = new ListeTilFil();
             ltf.listeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
@@ -25,6 +28,7 @@ public class ListeTilFil {
             }
         }
     }
+    //Metode som tager ind fil og appender en arrayliste med medlemmer til den
     public void listeTilFilAppend(String file, ArrayList<Medlem> list) throws FileNotFoundException
     {
         PrintStream out = new PrintStream(new FileOutputStream(file,true));

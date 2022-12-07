@@ -23,6 +23,7 @@ public class Kasserer extends Ansat{
     private void betalKontigentMedlemmer() throws FileNotFoundException {
         th.printMedlemmer();
 
+        //Tager "Medlemmer.txt" og smider det ind i en arrayliste
         FilTilListe ftl = new FilTilListe();
         ArrayList<Medlem> mdl = new ArrayList<>();
         mdl.addAll(ftl.filTilListe("Medlemmer.txt"));
@@ -45,7 +46,7 @@ public class Kasserer extends Ansat{
         ListeTilFil ltf = new ListeTilFil();
         ltf.listeTilMedlemmer("Medlemmer.txt", mdl);
     }
-
+    //Menu til kasserer
     protected void menu() throws FileNotFoundException {
         boolean success = false;
 

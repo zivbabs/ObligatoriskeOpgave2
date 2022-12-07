@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class SystemInScanner {
     //Import af texthandler til konsol udprintninger.
     Texthandler th = new Texthandler();
+    //Metode til at håndtere input som forventes at være en integer på maks 9999
     public int inputInt() {
         boolean success = false;
         int output = 0;
@@ -114,7 +115,7 @@ public class SystemInScanner {
         //Bygger string som en localdate
         return årstal + "-" + måned + "-" + dag;
     }
-
+    //Metode som returnere træningstid som en string, indelt i minutter, sekunder og miliskeunder, adskilt af :
     public String inputTid() {
         String min = "";
         String sek = "";
@@ -171,6 +172,7 @@ public class SystemInScanner {
         }
         return min+":"+sek+":"+mili;
     }
+    //Metode som tjekker at når der bliver tilføjet en træner til en konkurrencesvømmer, må træneren maks have 3 initialer.
     public String inputTræner() {
         String b = "";
         boolean success = false;
@@ -188,6 +190,7 @@ public class SystemInScanner {
         }
         return b;
     }
+    //Metode som tjekker om input er uden for de rammer vi har sat de forskellige steder.
     public int inputOOBLength(int input, int length){
         int c = 0;
         boolean success = false;

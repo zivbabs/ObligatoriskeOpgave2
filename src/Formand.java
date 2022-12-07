@@ -53,7 +53,7 @@ public class Formand extends Ansat {
             }
         }
     }
-
+    //Metode som bliver brugt i opretMedlem() for at vælge aktivt eller passivt medlemskab
     private String statusValg() {
         String status = "";
         boolean success = false;
@@ -75,7 +75,7 @@ public class Formand extends Ansat {
         }
         return status;
     }
-
+    //Menu for Formand
     protected void menu() throws FileNotFoundException {
         boolean success = false;
 

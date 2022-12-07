@@ -184,6 +184,7 @@ public class Texthandler {
         System.out.println("Print de 2 hundrededele i tiden. Fx 00 eller 10");
     }
 
+    //Metoder som printer træningstiderne formateret, og giver hvert index et nummer.
     public void printTræningsTider() throws FileNotFoundException
     {
         ArrayList<Medlem> mdl = new ArrayList<>();
@@ -237,6 +238,7 @@ public class Texthandler {
         System.out.println("Indtast om medlem er aktiv[1] eller passiv[2].");
     }
 
+    //Metode som tæger træningstiderne, smider informationen over i en midlertidig arrayliste, sorterer efter tid og printer top 5
     public void printTop5(String a) throws FileNotFoundException {
 
         ArrayList<Medlem> mdl = new ArrayList<>();

@@ -10,7 +10,7 @@ public class FilTilListe {
         File filInput = new File(file);
         Scanner sc = new Scanner(filInput);
         ArrayList<Medlem> mdl = new ArrayList<>();
-        //Smider information ind i array med "," til at splitte information med
+        //Smider information ind i array med "," til at splitte information med og fjerner whitespace
         while(sc.hasNextLine()){
             String[] i = sc.nextLine().split(",");
             String medlemsskab = i[0].trim();
@@ -39,6 +39,7 @@ public class FilTilListe {
         mdl.sort(Comparator.comparing(m -> m.medlemsskab));
         return mdl;
     }
+    //Metode som, i vores tilfælde, tager "Ansatte.txt" filen og smider informationen ind i en arrayliste og sender den liste videre til login metoden.
     public ArrayList<Ansat> filTilListeAnsatte(String file) throws FileNotFoundException {
         File filInput = new File(file);
         Scanner sc = new Scanner(filInput);

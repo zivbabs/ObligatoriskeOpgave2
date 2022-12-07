@@ -119,7 +119,7 @@ public class Træner extends Ansat{
         ltf.listeTilMedlemmer("Træningstider.txt",mdl);
 
     }
-    // Vælge medlem, indtaste stævne + dato, indtast placering, indtast disciplin
+    // Vælge medlem, indtaste stævne + dato, indtast placering, indtast disciplin. Derefter appende det til "stævner.txt"
     private void tilføjStævneTid() throws FileNotFoundException {
         th.printKonkurrenceSvømmere();
 
@@ -150,12 +150,13 @@ public class Træner extends Ansat{
         ltf.listeTilFilAppend("Stævner.txt", tempmdl);
 
     }
+    //Metode til at printe top 5 bedste træningstider inden for valgt disciplin
     private void printTop5() throws FileNotFoundException {
         th.vælgDiscTop5();
         String a = discValg();
         th.printTop5(a);
     }
-
+    //Menu for træner.
     protected void menu() throws FileNotFoundException {
         boolean success = false;
 

@@ -23,7 +23,7 @@ public class Ansat {
     protected String setDato(){
         return String.valueOf(LocalDate.now());
     }
-
+    // Metode for login for ansatte som sender en videre til en menu hvis password er korrekt
     protected void login() throws FileNotFoundException {
         ArrayList<Ansat> ansatte = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
