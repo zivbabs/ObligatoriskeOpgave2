@@ -46,7 +46,7 @@ public class Kasserer extends Ansat{
         ltf.listeTilMedlemmer("Medlemmer.txt", mdl);
     }
 
-    public void menu() throws FileNotFoundException {
+    protected void menu() throws FileNotFoundException {
         boolean success = false;
 
         while(!success){

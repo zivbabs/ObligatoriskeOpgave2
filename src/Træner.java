@@ -156,7 +156,7 @@ public class Træner extends Ansat{
         th.printTop5(a);
     }
 
-    public void menu() throws FileNotFoundException {
+    protected void menu() throws FileNotFoundException {
         boolean success = false;
 
         while(!success){

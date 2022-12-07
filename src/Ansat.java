@@ -24,7 +24,7 @@ public class Ansat {
         return String.valueOf(LocalDate.now());
     }
 
-    public void login() throws FileNotFoundException {
+    protected void login() throws FileNotFoundException {
         ArrayList<Ansat> ansatte = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         ansatte.addAll(ftl.filTilListeAnsatte("Ansatte.txt"));

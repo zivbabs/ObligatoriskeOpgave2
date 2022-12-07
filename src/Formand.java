@@ -76,7 +76,7 @@ public class Formand extends Ansat {
         return status;
     }
 
-    public void menu() throws FileNotFoundException {
+    protected void menu() throws FileNotFoundException {
         boolean success = false;
 
         while(!success){
