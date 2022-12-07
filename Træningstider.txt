@@ -29,4 +29,6 @@ KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, Medley, Crawl-Br
 KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, Medley, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, 00:30:25, TBD, TBD
 KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, Medley, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, 00:30:23, TBD, TBD
 KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, Medley, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, 01:30:21, TBD, TBD
-KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, Medley, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, 01:30:27, TBD, TBD
+KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, Medley, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, 02:15:30, TBD, TBD
+KonkurrenceSvømmer, Banana, Man, 1375-01-29, I restance, Aktiv, Crawl, Crawl, TBD, TBD, TBD
+KonkurrenceSvømmer, Banana, Man, 1375-01-29, I restance, Aktiv, Brystsvøm, Crawl-Brystsvøm, TBD, TBD, TBD

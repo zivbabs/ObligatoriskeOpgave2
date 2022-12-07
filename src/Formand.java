@@ -18,7 +18,7 @@ public class Formand extends Ansat {
     }
 
     //Funktion til at oprette medlemmer
-    public void opretMedlem() throws FileNotFoundException {
+    private void opretMedlem() throws FileNotFoundException {
         boolean success = false;
         PrintStream out1 = new PrintStream(new FileOutputStream("Medlemmer.txt", true));
         PrintStream out2 = new PrintStream(new FileOutputStream("KonkurrenceSvømmere.txt", true));

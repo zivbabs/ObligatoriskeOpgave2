@@ -6,7 +6,7 @@ public class Medlem {
     protected String alder;
     protected String restance;
     protected String status;
-    protected String træningsDisc;
+    protected String discValgt;
     protected String discipliner;
     protected String resultat;
     protected String stævne;
@@ -21,14 +21,14 @@ public class Medlem {
         this.status = status;
     }
     //Constructor med parametre til konkurrencesvømmere bruger this for at undgå settere i subclasses.
-    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String status, String træningsDisc, String discipliner, String resultat, String stævne, String træner){
+    public Medlem(String medlemsskab, String fornavn, String efternavn, String alder, String restance, String status, String discValgt, String discipliner, String resultat, String stævne, String træner){
         this.medlemsskab = medlemsskab;
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.alder = alder;
         this.restance = restance;
         this.status = status;
-        this.træningsDisc = træningsDisc;
+        this.discValgt = discValgt;
         this.discipliner = discipliner;
         this.resultat = resultat;
         this.stævne = stævne;
@@ -47,8 +47,8 @@ public class Medlem {
         this.træner = træner;
     }
 
-    public void setTræningsDisc(String træningsDisc) {
-        this.træningsDisc = træningsDisc;
+    public void setDiscValgt(String discValgt) {
+        this.discValgt = discValgt;
     }
 
     public void setTid(String resultat) {

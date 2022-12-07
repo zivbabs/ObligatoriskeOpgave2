@@ -20,11 +20,11 @@ public class Ansat {
         this.pw = pw;
     }
     //Metode til at sætte dagens dato
-    public String setDato(){
+    protected String setDato(){
         return String.valueOf(LocalDate.now());
     }
 
-    public  void login() throws FileNotFoundException {
+    public void login() throws FileNotFoundException {
         ArrayList<Ansat> ansatte = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         ansatte.addAll(ftl.filTilListeAnsatte("Ansatte.txt"));

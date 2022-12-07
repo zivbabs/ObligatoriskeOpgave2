@@ -13,9 +13,7 @@ public class Træner extends Ansat{
         super(medlemsskab, fornavn, efternavn, pw);
     }
     //Metode for at tilføje discipliner til medlemmer op til alle 5 man kan have med en concat string build
-    public void tilFøjdisciplin() throws FileNotFoundException {
-        boolean success = false;
-
+    private void tilFøjdisciplin() throws FileNotFoundException {
         th.printKonkurrenceSvømmere();
 
         FilTilListe ftl = new FilTilListe();
@@ -65,7 +63,7 @@ public class Træner extends Ansat{
         return disciplin;
     }
     //Metode for at tilføje træner da der kun kan være 1 træner til hver medlem selvom de kan have flere discipliner
-    public void tilføjTræner() throws FileNotFoundException {
+    private void tilføjTræner() throws FileNotFoundException {
         th.printKonkurrenceSvømmere();
 
         FilTilListe ftl = new FilTilListe();
@@ -101,7 +99,7 @@ public class Træner extends Ansat{
         return valgDisciplin(a);
     }
     //Redigering af træningstider ud fra de træningstider man kan se hos træningstider.txt
-    public void redigerTræningsTid() throws FileNotFoundException {
+    private void redigerTræningsTid() throws FileNotFoundException {
         th.printTræningsTider();
 
         ArrayList<Medlem> mdl = new ArrayList<>();
@@ -122,7 +120,7 @@ public class Træner extends Ansat{
 
     }
     // Vælge medlem, indtaste stævne + dato, indtast placering, indtast disciplin
-    public void tilføjStævneTid() throws FileNotFoundException {
+    private void tilføjStævneTid() throws FileNotFoundException {
         th.printKonkurrenceSvømmere();
 
         ArrayList<Medlem> mdl = new ArrayList<>();
@@ -152,7 +150,7 @@ public class Træner extends Ansat{
         ltf.listeTilFilAppend("Stævner.txt", tempmdl);
 
     }
-    public void printTop5() throws FileNotFoundException {
+    private void printTop5() throws FileNotFoundException {
         th.vælgDiscTop5();
         String a = discValg();
         th.printTop5(a);

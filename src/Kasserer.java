@@ -16,11 +16,11 @@ public class Kasserer extends Ansat{
         super(medlemsskab, fornavn, efternavn, pw);
     }
     //Metode til at printe alle medlemmer som der er i restance eller ikke har betalt endnu.
-    public void printMedlemmerRestance() throws FileNotFoundException {
+    private void printMedlemmerRestance() throws FileNotFoundException {
         th.printRestance();
     }
     //Metode til at betale kontingent på medlemmer
-    public void betalKontigentMedlemmer() throws FileNotFoundException {
+    private void betalKontigentMedlemmer() throws FileNotFoundException {
         th.printMedlemmer();
 
         FilTilListe ftl = new FilTilListe();

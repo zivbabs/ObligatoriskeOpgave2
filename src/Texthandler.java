@@ -197,7 +197,7 @@ public class Texthandler {
         System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
 
         for(Medlem m : mdl){
-            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.træningsDisc, m.resultat);
+            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.discValgt, m.resultat);
             System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
             idcounter++;
         }
@@ -245,7 +245,7 @@ public class Texthandler {
         ArrayList<Medlem> temp = new ArrayList<>();
 
         for (Medlem m : mdl) {
-            if (a.equals(m.træningsDisc)) {
+            if (a.equals(m.discValgt)) {
                 temp.add(m);
             }
         }
@@ -257,7 +257,7 @@ public class Texthandler {
         System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
 
         for (int i = 0; i < 5; i++) {
-                System.out.printf("| %-25s | %-25s | %-12s | %-41s | %-7s | %-10s |%n", temp.get(i).fornavn, temp.get(i).efternavn, temp.get(i).alder, temp.get(i).træningsDisc, temp.get(i).træner, temp.get(i).resultat);
+                System.out.printf("| %-25s | %-25s | %-12s | %-41s | %-7s | %-10s |%n", temp.get(i).fornavn, temp.get(i).efternavn, temp.get(i).alder, temp.get(i).discValgt, temp.get(i).træner, temp.get(i).resultat);
                 System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
         }
     }

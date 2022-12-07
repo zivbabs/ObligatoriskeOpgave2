@@ -8,9 +8,9 @@ public class ListeTilFil {
             ListeTilFil ltf = new ListeTilFil();
             ltf.listeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
 
-            mdl.get(a).setTræningsDisc(b);
+            mdl.get(a).setDiscValgt(b);
             PrintStream out = new PrintStream(new FileOutputStream("Træningstider.txt", true));
-            out.println(mdl.get(a).medlemsskab + ", " + mdl.get(a).fornavn + ", " + mdl.get(a).efternavn + ", " + mdl.get(a).alder + ", " + mdl.get(a).restance + ", "+ mdl.get(a).status + ", " + mdl.get(a).træningsDisc + ", " + mdl.get(a).discipliner + ", " + mdl.get(a).resultat + ", " + mdl.get(a).stævne + ", " + mdl.get(a).træner);
+            out.println(mdl.get(a).medlemsskab + ", " + mdl.get(a).fornavn + ", " + mdl.get(a).efternavn + ", " + mdl.get(a).alder + ", " + mdl.get(a).restance + ", "+ mdl.get(a).status + ", " + mdl.get(a).discValgt + ", " + mdl.get(a).discipliner + ", " + mdl.get(a).resultat + ", " + mdl.get(a).stævne + ", " + mdl.get(a).træner);
     }
 
     //Metode til at køre listen over til en fil.
@@ -19,7 +19,7 @@ public class ListeTilFil {
         //Kører et for each loop med typen "Medlem" som vi kalder "m" for hvert "list" der er.
         for(Medlem m : list){
             if(m.medlemsskab.contains("KonkurrenceSvømmer"))
-                out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", "+ m.status + ", " + m.træningsDisc + ", " + m.discipliner + ", " + m.resultat + ", " + m.stævne + ", " + m.træner);
+                out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", "+ m.status + ", " + m.discValgt + ", " + m.discipliner + ", " + m.resultat + ", " + m.stævne + ", " + m.træner);
             else if(m.medlemsskab.contains("Motionist")){
                 out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", "+ m.status);
             }
@@ -29,7 +29,7 @@ public class ListeTilFil {
     {
         PrintStream out = new PrintStream(new FileOutputStream(file,true));
         for(Medlem m : list) {
-            out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", "+ m.status + ", " + m.træningsDisc + ", " + m.discipliner + ", " + m.resultat + ", " + m.stævne + ", " + m.træner);
+            out.println(m.medlemsskab + ", " + m.fornavn + ", " + m.efternavn + ", " + m.alder + ", " + m.restance + ", "+ m.status + ", " + m.discValgt + ", " + m.discipliner + ", " + m.resultat + ", " + m.stævne + ", " + m.træner);
         }
     }
 }
