@@ -1,4 +1,5 @@
 KonkurrenceSvømmer, Fart, Mand, 1876-11-11, I restance, Aktiv, TBD, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, TBD, TBD, HA
 KonkurrenceSvømmer, Banana, Man, 1375-01-29, I restance, Aktiv, TBD, Crawl-Brystsvøm, TBD, TBD, FOK
-KonkurrenceSvømmer, Manman, Man, 1988-05-29, I restance, Aktiv, TBD, TBD, TBD, TBD, BLA
-KonkurrenceSvømmer, Svørr, Lærmand, 1987-11-05, I restance, Passiv, TBD, TBD, TBD, TBD, TBD
+KonkurrenceSvømmer, Manman, Man, 1988-05-29, I restance, Aktiv, TBD, Brystsvøm, TBD, TBD, BLA
+KonkurrenceSvømmer, Svørr, Lærmand, 1987-11-05, I restance, Passiv, TBD, TBD, TBD, TBD, KMM
+KonkurrenceSvømmer, Pass, Power, 1987-01-01, I restance, Passiv, TBD, TBD, TBD, TBD, TBD

@@ -32,3 +32,4 @@ KonkurrenceSvømmer, Fart, Manh, 1876-11-11, I restance, Aktiv, Medley, Crawl-Br
 KonkurrenceSvømmer, Fart, Mani, 1876-11-11, I restance, Aktiv, Medley, Crawl-Brystsvøm-Butterfly-Rygcrawl-Medley, 02:15:30, TBD, TBD
 KonkurrenceSvømmer, Banana, Maj, 1375-01-29, I restance, Aktiv, Crawl, Crawl, TBD, TBD, TBD
 KonkurrenceSvømmer, Banana, Man, 1375-01-29, I restance, Aktiv, Brystsvøm, Crawl-Brystsvøm, TBD, TBD, TBD
+KonkurrenceSvømmer, Manman, Man, 1988-05-29, I restance, Aktiv, Brystsvøm, Brystsvøm, 00:01:01, TBD, BLA

@@ -27,37 +27,37 @@ public class Træner extends Ansat{
 
         th.redigerDisciplin();
 
-        int x = sc.inputInt();
-        int a = sc.inputOOBLength(x, mdl.size());
-        th.printDisciplin(mdl.get(a).fornavn);
+        int idTemp = sc.inputInt();
+        int id = sc.inputOOBLength(idTemp, mdl.size());
+        th.printDisciplin(mdl.get(id).fornavn);
 
-        String b = discValg();
-        if(mdl.get(a).discipliner.contains(b)) {
+        String disciplin = discValg();
+        if(mdl.get(id).discipliner.contains(disciplin)) {
             th.harAlleredeDisciplin();
         }
-        else if(mdl.get(a).discipliner.contains("TBD")){
-            mdl.get(a).setDisciplin(b);
-            ltf.listeTilFilDisc(mdl, a, b);
+        else if(mdl.get(id).discipliner.contains("TBD")){
+            mdl.get(id).setDisciplin(disciplin);
+            ltf.listeTilFilDisc(mdl, id, disciplin);
         }
         else {
-            mdl.get(a).setDisciplin(mdl.get(a).discipliner.concat("-").concat(b));
-            ltf.listeTilFilDisc(mdl, a, b);
+            mdl.get(id).setDisciplin(mdl.get(id).discipliner.concat("-").concat(disciplin));
+            ltf.listeTilFilDisc(mdl, id, disciplin);
         }
     }
 
     //Metode med input for valg af disciplienr som vælger den disciplin der skal bruges.
-    private String valgDisciplin(int input) {
+    private String valgDisciplin(int disciplinValg) {
         String disciplin = "";
-        if(input == 1){
+        if(disciplinValg == 1){
             disciplin = "Crawl";
         }
-        else if(input == 2){
+        else if(disciplinValg == 2){
             disciplin = "Brystsvøm";
         }
-        else if(input == 3){
+        else if(disciplinValg == 3){
             disciplin = "Butterfly";
         }
-        else if(input == 4){
+        else if(disciplinValg == 4){
             disciplin = "Rygcrawl";
         }
         else {
@@ -79,13 +79,13 @@ public class Træner extends Ansat{
         }
 
         th.redigerTrænerPrint();
-        int x = sc.inputInt();
-        int a = sc.inputOOBLength(x, mdl.size());
+        int idTemp = sc.inputInt();
+        int id = sc.inputOOBLength(idTemp, mdl.size());
 
         th.indtastTræner();
-        String b = sc.inputTræner();
+        String trænerInitialer = sc.inputTræner();
 
-        mdl.get(a).setTræner(b);
+        mdl.get(id).setTræner(trænerInitialer);
 
         ListeTilFil ltf = new ListeTilFil();
         ltf.listeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
@@ -93,18 +93,18 @@ public class Træner extends Ansat{
     //Vælg af træningsdiscipliner ud fra de discipliner medlemmet er tildelt
     private String discValg() {
         boolean success = false;
-        int a = 0;
+        int discValgId = 0;
 
         while (!success) {
-            a=sc.inputInt();
-            if (a < 6 && a > 0) {
+            discValgId = sc.inputInt();
+            if (discValgId < 6 && discValgId > 0) {
                 success = true;
             }
             else {
                 th.forkertInputPrint();
             }
         }
-        return valgDisciplin(a);
+        return valgDisciplin(discValgId);
     }
     //Redigering af træningstider ud fra de træningstider man kan se hos træningstider.txt
     private void redigerTræningsTid() throws FileNotFoundException {
@@ -120,12 +120,12 @@ public class Træner extends Ansat{
 
         th.redigerTræningPrint();
 
-        int x = sc.inputInt();
-        int a = sc.inputOOBLength(x, mdl.size());
+        int idTemp = sc.inputInt();
+        int id = sc.inputOOBLength(idTemp, mdl.size());
 
         th.valgTræningsTid();
-        String b = sc.inputTid();
-        mdl.get(a).setTid(b);
+        String træningstid = sc.inputTid();
+        mdl.get(id).setTid(træningstid);
 
         ListeTilFil ltf = new ListeTilFil();
         ltf.listeTilMedlemmer("Træningstider.txt",mdl);
@@ -145,32 +145,32 @@ public class Træner extends Ansat{
         }
 
         th.vælgMedlemStævnePrint();
-        int x = sc.inputInt();
-        int a = sc.inputOOBLength(x, mdl.size());
+        int idTemp = sc.inputInt();
+        int id = sc.inputOOBLength(idTemp, mdl.size());
 
         th.indtastStævne();
-        String b = sc.inputString();
+        String stævne = sc.inputString();
 
         th.indtastPlacering();
-        int c = sc.inputInt();
+        int placering = sc.inputInt();
 
         th.discValgStævne();
-        String e = discValg();
+        String stævneDisciplin = discValg();
 
-        mdl.get(a).setStævne(b+" "+setDato());
-        mdl.get(a).setPlacering(c);
-        mdl.get(a).setDisciplin(e);
+        mdl.get(id).setStævne(stævne + " " + setDato());
+        mdl.get(id).setPlacering(placering);
+        mdl.get(id).setDisciplin(stævneDisciplin);
 
-        ArrayList<Medlem> tempmdl = new ArrayList<>();
-        tempmdl.add(mdl.get(a));
-        ltf.listeTilFilAppend("Stævner.txt", tempmdl);
+        ArrayList<Medlem> tempMdl = new ArrayList<>();
+        tempMdl.add(mdl.get(id));
+        ltf.listeTilFilAppend("Stævner.txt", tempMdl);
 
     }
     //Metode til at printe top 5 bedste træningstider inden for valgt disciplin
     private void printTop5() throws FileNotFoundException {
         th.vælgDiscTop5();
-        String a = discValg();
-        th.printTop5(a);
+        String disciplin = discValg();
+        th.printTop5(disciplin);
     }
     //Menu for træner.
     protected void menu() throws FileNotFoundException {
@@ -179,9 +179,9 @@ public class Træner extends Ansat{
         while(!success){
 
             th.trænerMenuOptions();
-            int i = sc.inputInt();
+            int inputMenu = sc.inputInt();
 
-            switch(i){
+            switch(inputMenu){
                 case 1 -> tilFøjdisciplin();
                 case 2 -> tilføjTræner();
                 case 3 -> redigerTræningsTid();
@@ -189,7 +189,7 @@ public class Træner extends Ansat{
                 case 5 -> printTop5();
                 case 6 -> success = true;
             }
-            if(i < 1 || i > 6){
+            if(inputMenu < 1 || inputMenu > 6){
                 th.forkertInputPrint();
             }
         }

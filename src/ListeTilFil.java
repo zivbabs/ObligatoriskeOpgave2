@@ -7,13 +7,13 @@ public class ListeTilFil {
 
     //Metode som tager ind en liste og smider den over i listeTilMedlemmer() som overskriver "Konkurrencesvømmere.txt.
     //Derefter appender den et valgt medlem med valgt disciplin til træningstider
-    public void listeTilFilDisc(ArrayList<Medlem> mdl, int a, String b) throws FileNotFoundException {
+    public void listeTilFilDisc(ArrayList<Medlem> mdl, int id, String disciplin) throws FileNotFoundException {
             ListeTilFil ltf = new ListeTilFil();
             ltf.listeTilMedlemmer("KonkurrenceSvømmere.txt", mdl);
 
-            mdl.get(a).setDiscValgt(b);
+            mdl.get(id).setDiscValgt(disciplin);
             PrintStream out = new PrintStream(new FileOutputStream("Træningstider.txt", true));
-            out.println(mdl.get(a).medlemsskab + ", " + mdl.get(a).fornavn + ", " + mdl.get(a).efternavn + ", " + mdl.get(a).alder + ", " + mdl.get(a).restance + ", "+ mdl.get(a).status + ", " + mdl.get(a).discValgt + ", " + mdl.get(a).discipliner + ", " + mdl.get(a).resultat + ", " + mdl.get(a).stævne + ", " + mdl.get(a).træner);
+            out.println(mdl.get(id).medlemsskab + ", " + mdl.get(id).fornavn + ", " + mdl.get(id).efternavn + ", " + mdl.get(id).alder + ", " + mdl.get(id).restance + ", "+ mdl.get(id).status + ", " + mdl.get(id).discValgt + ", " + mdl.get(id).discipliner + ", " + mdl.get(id).resultat + ", " + mdl.get(id).stævne + ", " + mdl.get(id).træner);
     }
 
     //Metode til at køre listen over til en fil.

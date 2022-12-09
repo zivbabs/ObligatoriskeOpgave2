@@ -41,32 +41,32 @@ public class Texthandler {
     }
     //printRestance of flere andre udprintninger bruger filtiliste til at læse data in derefter fordele den med for each loop.
     public void printRestance() throws FileNotFoundException {
-        int counter1 = 0;
-        int counter2 = 0;
+        int udprintCounter1 = 0;
+        int udprintCounter2 = 0;
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.filTilListe("Medlemmer.txt"));
 
         for(Medlem m : mdl){
             if(m instanceof Motionist && m.restance.equals("I restance")){
-                if (counter1==0) {
+                if (udprintCounter1==0) {
                     System.out.printf("\nMOTIONIST DATA%n");
                     System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
                     System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n", "Medlemskab", "Fornavn", "Efternavn", "Fødselsdato", "Restance");
                     System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
-                    counter1++;
+                    udprintCounter1++;
                 }
                 System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n",m.medlemsskab, m.fornavn, m.efternavn, m.alder, m.restance);
                 System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
             }
 
             if(m instanceof KonkurrenceSvømmer && m.restance.equals("I restance")){
-                if (counter2==0) {
+                if (udprintCounter2==0) {
                     System.out.printf("\nKONKURRENCESVØMMER DATA%n");
                     System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
                     System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n", "Medlemskab", "Fornavn", "Efternavn", "Fødselsdato", "Restance");
                     System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
-                    counter2++;
+                    udprintCounter2++;
                 }
                 System.out.printf("| %-20s | %-25s | %-25s | %-12s | %-20s |%n",m.medlemsskab, m.fornavn, m.efternavn, m.alder, m.restance);
                 System.out.printf("----------------------------------------------------------------------------------------------------------------------%n");
@@ -75,7 +75,7 @@ public class Texthandler {
     }
 
     public void printMedlemmer() throws FileNotFoundException {
-        int idcounter = 0;
+        int idCounter = 0;
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.filTilListe("Medlemmer.txt"));
@@ -88,10 +88,10 @@ public class Texthandler {
 
         for(Medlem m : mdl) {
 
-            System.out.printf("|%-5s | %-20s | %-25s | %-25s | %-12s | %-20s |%n", idcounter, m.medlemsskab, m.fornavn, m.efternavn, m.alder, m.restance);
+            System.out.printf("|%-5s | %-20s | %-25s | %-25s | %-12s | %-20s |%n", idCounter, m.medlemsskab, m.fornavn, m.efternavn, m.alder, m.restance);
             System.out.printf("-----------------------------------------------------------------------------------------------------------------------------%n");
 
-            idcounter++;
+            idCounter++;
 
         }
     }
@@ -105,21 +105,21 @@ public class Texthandler {
     }
     //visKontingentBeløb har paramtre alder og medlemsskab ind for at checke medlemsinfo så den kan vise korrekte beløb.
     public void visKontingentBeløb(int alder, String medlemsskab, String status) {
-        String beløb;
+        String beløbInfo;
 
         if(alder < 18 && medlemsskab.equals("KonkurrenceSvømmer") && status.equals("Aktiv")){
-            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1000 kr.";
+            beløbInfo = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1000 kr.";
         }
         else if(alder > 18 && alder < 60 && medlemsskab.equals("KonkurrenceSvømmer") && status.equals("Aktiv")){
-            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1600 kr.";
+            beløbInfo = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1600 kr.";
         }
         else if(alder >= 60 && medlemsskab.contains("KonkurrenceSvømmer") && status.equals("Aktiv")){
-            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1200 kr.";
+            beløbInfo = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "1200 kr.";
         }
         else{
-            beløb = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "500 kr.";
+            beløbInfo = "Dit medlem er en " + medlemsskab + " og er " + alder + " år gammel, kontingent er " + "500 kr.";
         }
-        System.out.println(beløb);
+        System.out.println(beløbInfo);
         System.out.println("Hvis restance skal betales tryk [1] ellers indtast vilkårligt tal.");
     }
 
@@ -139,7 +139,7 @@ public class Texthandler {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
-        int idcounter = 0;
+        int idCounter = 0;
 
         System.out.printf("KONKURRENCESVØMMER DATA%n");
         System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
@@ -147,9 +147,9 @@ public class Texthandler {
         System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
 
         for(Medlem m : mdl){
-            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-41s | %-7s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.discipliner, m.træner);
+            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-41s | %-7s |%n", idCounter, m.fornavn, m.efternavn, m.alder, m.discipliner, m.træner);
             System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------%n");
-            idcounter++;
+            idCounter++;
         }
     }
 
@@ -190,7 +190,7 @@ public class Texthandler {
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.filTilListe("Træningstider.txt"));
-        int idcounter = 0;
+        int idCounter = 0;
 
         System.out.printf("TRÆNINGSTIDER DATA%n");
         System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
@@ -198,9 +198,9 @@ public class Texthandler {
         System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
 
         for(Medlem m : mdl){
-            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", idcounter, m.fornavn, m.efternavn, m.alder, m.discValgt, m.resultat);
+            System.out.printf("|%-5s | %-25s | %-25s | %-12s | %-12s | %-12s |%n", idCounter, m.fornavn, m.efternavn, m.alder, m.discValgt, m.resultat);
             System.out.printf("-------------------------------------------------------------------------------------------------------------%n");
-            idcounter++;
+            idCounter++;
         }
     }
 
@@ -239,7 +239,7 @@ public class Texthandler {
     }
 
     //Metode som tæger træningstiderne, smider informationen over i en midlertidig arrayliste, sorterer efter tid og printer top 5
-    public void printTop5(String a) throws FileNotFoundException {
+    public void printTop5(String disciplin) throws FileNotFoundException {
 
         ArrayList<Medlem> mdl = new ArrayList<>();
         FilTilListe ftl = new FilTilListe();
@@ -249,13 +249,13 @@ public class Texthandler {
         int newLength = 5;
 
         for (Medlem m : mdl) {
-            if (a.equals(m.discValgt)) {
+            if (disciplin.equals(m.discValgt)) {
                 temp.add(m);
             }
         }
         temp.sort(Comparator.comparing(m -> m.resultat));
 
-        System.out.printf("BEDSTE TIDER " + a.toUpperCase() + "%n");
+        System.out.printf("BEDSTE TIDER " + disciplin.toUpperCase() + "%n");
         System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------------%n");
         System.out.printf("| %-25s | %-25s | %-12s | %-41s | %-7s | %-10s |%n", "Fornavn", "Efternavn", "Fødselsdato", "Discipliner", "Træner", "Resultat");
         System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------------%n");

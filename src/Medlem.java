@@ -60,8 +60,8 @@ public class Medlem {
         this.stævne = stævne;
     }
 
-    public void setPlacering(int placering)
+    public void setPlacering(int resultatPlacering)
     {
-        resultat = String.valueOf(placering);
+        resultat = String.valueOf(resultatPlacering);
     }
 }

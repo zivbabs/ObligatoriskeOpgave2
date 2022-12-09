@@ -34,15 +34,15 @@ public class Kasserer extends Ansat{
 
         th.redigerMedlemRestance();
         //Bruger period between years til at se hvad forskellen er mellem fødselsalder og datoen i dag.
-        int i = sc.inputInt();
-        int k = sc.inputOOBLength(i, mdl.size());
-        int alder = Period.between(LocalDate.parse(mdl.get(k).alder), LocalDate.now()).getYears();
+        int idTemp = sc.inputInt();
+        int id = sc.inputOOBLength(idTemp, mdl.size());
+        int alder = Period.between(LocalDate.parse(mdl.get(id).alder), LocalDate.now()).getYears();
         //Metode der udregner og printer det korrekte kontingent der skal betales ud fra alder og medlemsskab.
-        th.visKontingentBeløb(alder, mdl.get(k).medlemsskab, mdl.get(k).status);
+        th.visKontingentBeløb(alder, mdl.get(id).medlemsskab, mdl.get(id).status);
         //Extra check om du medlemmet har betalt eller ej, da det foregår eksternt.
-        int j = sc.inputInt();
-        if(j == 1) {
-            mdl.get(k).setRestance("Betalt " + setDato());
+        int valgBetaling = sc.inputInt();
+        if(valgBetaling == 1) {
+            mdl.get(id).setRestance("Betalt " + setDato());
         }
         else{
             th.annuleretBetaling();
@@ -57,14 +57,14 @@ public class Kasserer extends Ansat{
         while(!success){
 
             th.kassererMenuOptions();
-            int i = sc.inputInt();
+            int inputMenu = sc.inputInt();
 
-            switch (i) {
+            switch (inputMenu) {
                 case 1 -> printMedlemmerRestance();
                 case 2 -> betalKontigentMedlemmer();
                 case 3 -> success = true;
             }
-            if(i < 1 || i > 2){
+            if(inputMenu < 1 || inputMenu > 2){
                 th.forkertInputPrint();
             }
         }

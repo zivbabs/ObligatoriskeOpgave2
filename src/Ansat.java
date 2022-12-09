@@ -37,14 +37,14 @@ public class Ansat {
         loop:
         while(!success) {
             th.loginOptions();
-            int i = sc.inputInt();
+            int loginValg = sc.inputInt();
 
-            switch (i) {
+            switch (loginValg) {
                 case 1 -> {
                     th.passwordAnsat();
-                    String a = sc.inputString();
+                    String passwordA = sc.inputString();
                     for (Ansat ansat : ansatte) {
-                        if (ansat.pw.equals(a) && ansat.medlemsskab.equals("Formand")) {
+                        if (ansat.pw.equals(passwordA) && ansat.medlemsskab.equals("Formand")) {
                             fmd.menu();
                             continue loop;
                         }
@@ -54,9 +54,9 @@ public class Ansat {
                 }
                 case 2 -> {
                     th.passwordAnsat();
-                    String b = sc.inputString();
+                    String passwordB = sc.inputString();
                     for (Ansat ansat : ansatte) {
-                        if (ansat.pw.equals(b) && ansat.medlemsskab.equals("Kasserer")) {
+                        if (ansat.pw.equals(passwordB) && ansat.medlemsskab.equals("Kasserer")) {
                             ksr.menu();
                             continue loop;
                         }
@@ -66,9 +66,9 @@ public class Ansat {
                 }
                 case 3 -> {
                     th.passwordAnsat();
-                    String c = sc.inputString();
+                    String passwordC = sc.inputString();
                     for (Ansat ansat : ansatte) {
-                        if (ansat.pw.equals(c) && ansat.medlemsskab.equals("Træner")) {
+                        if (ansat.pw.equals(passwordC) && ansat.medlemsskab.equals("Træner")) {
                             trn.menu();
                             continue loop;
                         }
@@ -78,7 +78,7 @@ public class Ansat {
                 }
                 case 4 -> success = true;
             }
-            if(i < 1 || i > 4) {
+            if(loginValg < 1 || loginValg > 4) {
                 th.forkertInputPrint();
             }
         }

@@ -1,7 +1,9 @@
 KonkurrenceSvømmer, Fart, Mand, 1876-11-11, Betalt 2022-12-05, Aktiv, TBC, TBD, TBD, TBD, TBD
 KonkurrenceSvømmer, Banana, Man, 1375-01-29, Betalt 2022-12-08, Aktiv, TBD, TBD, TBD, TBD, TBD
-KonkurrenceSvømmer, Manman, Man, 1988-05-29, I restance, Aktiv, TBD, TBD, TBD, TBD, TBD
+KonkurrenceSvømmer, Manman, Man, 1988-05-29, Betalt 2022-12-09, Aktiv, TBD, TBD, TBD, TBD, TBD
 KonkurrenceSvømmer, Svørr, Lærmand, 1987-11-05, Betalt 2022-12-07, Passiv, TBD, TBD, TBD, TBD, TBD
+KonkurrenceSvømmer, Pass, Power, 1987-01-01, I restance, Passiv, TBD, TBD, TBD, TBD, TBD
 Motionist, Manson, Man, 1987-05-17, Betalt 2022-12-07, Passiv
 Motionist, Fartman, Man, 1988-01-01, Betalt 2022-12-05, Passiv
 Motionist, asd, asd, 1999-01-02, Betalt 2022-12-07, Aktiv
+Motionist, asd, asd, 1999-01-01, I restance, Aktiv

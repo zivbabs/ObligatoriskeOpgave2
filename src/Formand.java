@@ -24,27 +24,27 @@ public class Formand extends Ansat {
         PrintStream out2 = new PrintStream(new FileOutputStream("KonkurrenceSvømmere.txt", true));
         //2 printere så vi kan tilføje til både medlemmer og hvis det er konkurrencesvømmer til konkurrencesvømmere
         th.medlemFornavnPrint();
-        String a = sc.inputString();
+        String fornavn = sc.inputString();
         th.medlemEfternavnPrint();
-        String b = sc.inputString();
+        String efternavn = sc.inputString();
         th.opretMedlemAlder();
-        String c = sc.inputAlder();
+        String alder = sc.inputAlder();
         th.opretStatus();
-        String e = statusValg();
+        String status = statusValg();
 
         while (!success) {
             //Valg mellem motionist eller konkurrencesvømmer
             th.opretMedlemskab();
-            int d = sc.inputInt();
+            int stringMedlemsskab = sc.inputInt();
             //Oprettelse af motionister med "," som divider til brug for indlæsning.
-            if (d == 1) {
-                out1.println("Motionist, " + a + ", " + b + ", " + c + ", " + "I restance, " + e);
+            if (stringMedlemsskab == 1) {
+                out1.println("Motionist, " + fornavn + ", " + efternavn + ", " + alder + ", " + "I restance, " + status);
                 success = true;
             }
             //Oprettelse af konkurrencesvømmere med "," som divider til brug for indlæsning.
-            else if (d == 2) {
-                out1.println("KonkurrenceSvømmer, " + a + ", " + b + ", " + c + ", " + "I restance, " + e + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
-                out2.println("KonkurrenceSvømmer, " + a + ", " + b + ", " + c + ", " + "I restance, " + e + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
+            else if (stringMedlemsskab == 2) {
+                out1.println("KonkurrenceSvømmer, " + fornavn + ", " + efternavn + ", " + alder + ", " + "I restance, " + status + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
+                out2.println("KonkurrenceSvømmer, " + fornavn + ", " + efternavn + ", " + alder + ", " + "I restance, " + status + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD" + ", " + "TBD");
                 success = true;
             }
             //Forkert input print hvis man ikke trykker 1 eller 2
@@ -59,13 +59,13 @@ public class Formand extends Ansat {
         boolean success = false;
         while(!success){
 
-            int a = sc.inputInt();
+            int inputStatus = sc.inputInt();
 
-            if(a == 1){
+            if(inputStatus == 1){
                 status = "Aktiv";
                 success = true;
             }
-            else if(a == 2){
+            else if(inputStatus == 2){
                 status = "Passiv";
                 success = true;
             }
@@ -82,13 +82,13 @@ public class Formand extends Ansat {
         while(!success){
 
             th.formandMenuOptions();
-            int i = sc.inputInt();
+            int inputMenu = sc.inputInt();
 
-            switch(i){
+            switch(inputMenu){
                 case 1 -> opretMedlem();
                 case 2 -> success = true;
             }
-            if(i < 1 || i > 2){
+            if(inputMenu < 1 || inputMenu > 2){
                 th.forkertInputPrint();
             }
         }
