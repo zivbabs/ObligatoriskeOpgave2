@@ -10,3 +10,4 @@ Som udgangspunkt har  Formand password, "Fpass"
 Kan ændres efter behov.
 
 Første gang programmet skal køres igennem skal der laves en konkurrencesvømmer som indlæses med stævne og træningstid for at alle funktioner virker.
+Hvis du ikke kører et medlem igennem første gang og sidder fast i en funktion kan du bare stoppe programmet, og starte det op igen.
