@@ -8,5 +8,3 @@ Som udgangspunkt har  Formand password, "Fpass"
                       Træner password, "Tpass"
 
 Kan ændres efter behov.
-
-Første gang programmet skal køres igennem skal der laves en konkurrencesvømmer som indlæses med stævne og træningstid for at alle funktioner virker.
