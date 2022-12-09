@@ -246,6 +246,8 @@ public class Texthandler {
         mdl.addAll(ftl.filTilListe("Træningstider.txt"));
         ArrayList<Medlem> temp = new ArrayList<>();
 
+        int newLength = 5;
+
         for (Medlem m : mdl) {
             if (a.equals(m.discValgt)) {
                 temp.add(m);
@@ -258,7 +260,11 @@ public class Texthandler {
         System.out.printf("| %-25s | %-25s | %-12s | %-41s | %-7s | %-10s |%n", "Fornavn", "Efternavn", "Fødselsdato", "Discipliner", "Træner", "Resultat");
         System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------------%n");
 
-        for (int i = 0; i < 5; i++) {
+        if(temp.size() < 5){
+            newLength = temp.size();
+        }
+
+        for (int i = 0; i < newLength; i++) {
                 System.out.printf("| %-25s | %-25s | %-12s | %-41s | %-7s | %-10s |%n", temp.get(i).fornavn, temp.get(i).efternavn, temp.get(i).alder, temp.get(i).discValgt, temp.get(i).træner, temp.get(i).resultat);
                 System.out.printf("-------------------------------------------------------------------------------------------------------------------------------------------%n");
         }

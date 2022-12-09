@@ -21,6 +21,10 @@ public class Træner extends Ansat{
         ArrayList<Medlem> mdl = new ArrayList<>();
         mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
 
+        if(mdl.size() < 1){
+            return;
+        }
+
         th.redigerDisciplin();
 
         int x = sc.inputInt();
@@ -70,6 +74,10 @@ public class Træner extends Ansat{
         ArrayList<Medlem> mdl = new ArrayList<>();
         mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
 
+        if(mdl.size() < 1){
+            return;
+        }
+
         th.redigerTrænerPrint();
         int x = sc.inputInt();
         int a = sc.inputOOBLength(x, mdl.size());
@@ -106,6 +114,10 @@ public class Træner extends Ansat{
         FilTilListe ftl = new FilTilListe();
         mdl.addAll(ftl.filTilListe("Træningstider.txt"));
 
+        if(mdl.size() < 1){
+            return;
+        }
+
         th.redigerTræningPrint();
 
         int x = sc.inputInt();
@@ -127,6 +139,10 @@ public class Træner extends Ansat{
         FilTilListe ftl = new FilTilListe();
         ListeTilFil ltf = new ListeTilFil();
         mdl.addAll(ftl.filTilListe("KonkurrenceSvømmere.txt"));
+
+        if(mdl.size() < 1){
+            return;
+        }
 
         th.vælgMedlemStævnePrint();
         int x = sc.inputInt();

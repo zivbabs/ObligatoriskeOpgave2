@@ -28,6 +28,10 @@ public class Kasserer extends Ansat{
         ArrayList<Medlem> mdl = new ArrayList<>();
         mdl.addAll(ftl.filTilListe("Medlemmer.txt"));
 
+        if(mdl.size() < 1){
+            return;
+        }
+
         th.redigerMedlemRestance();
         //Bruger period between years til at se hvad forskellen er mellem fødselsalder og datoen i dag.
         int i = sc.inputInt();
