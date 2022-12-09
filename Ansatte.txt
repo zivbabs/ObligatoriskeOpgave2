@@ -1,0 +1,4 @@
+Formand, Freddy, Krueger, Fpass
+Kasserer, Jason, Vorhees, Kpass
+Træner, Michael, Meyers, Tpass
+Træner, Jack, Torrance, Tpass
